@@ -1,0 +1,9 @@
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\Debug\TheLegend.exe.config
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\Debug\TheLegend.exe
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\Debug\TheLegend.pdb
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Form1.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Properties.Resources.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.exe
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
