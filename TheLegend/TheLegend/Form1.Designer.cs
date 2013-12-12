@@ -107,6 +107,7 @@
             // 
             // Informacoes
             // 
+            this.Informacoes.Enabled = false;
             this.Informacoes.Font = new System.Drawing.Font("Modern No. 20", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Informacoes.Location = new System.Drawing.Point(101, 227);
             this.Informacoes.Name = "Informacoes";

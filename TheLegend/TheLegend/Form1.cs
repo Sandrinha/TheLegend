@@ -47,6 +47,7 @@ namespace TheLegend
             if(dr.Read())
             {
                 Login.login(dr["user"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["nivel"]));
+                button1.Enabled = true;
             }
         }
     }
