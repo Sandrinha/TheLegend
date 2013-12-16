@@ -30,6 +30,8 @@ namespace TheLegend.Models
         public DateTime Birth { get; set; }
         public string Sex { get; set; }
         public string Email { get; set; }
+
+        public virtual ICollection<Tag> lTag { get; set; }
     }
 
     public class RegisterExternalLoginModel
