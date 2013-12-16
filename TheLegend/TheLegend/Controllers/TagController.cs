@@ -7,12 +7,11 @@ using System.Web;
 using System.Web.Mvc;
 using TheLegend.Models;
 
-
 namespace TheLegend.Controllers
 {
     public class TagController : Controller
     {
-        private GameContext db = new GameContext();
+        private UserContext db = new UserContext();
 
         //
         // GET: /Tag/

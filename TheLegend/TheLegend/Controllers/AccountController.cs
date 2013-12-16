@@ -79,7 +79,7 @@ namespace TheLegend.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: new { model.Birth, model.Email, model.Sex });
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
@@ -263,7 +263,7 @@ namespace TheLegend.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (GameContext db = new GameContext())
+                using (UserContext db = new UserContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
