@@ -8,15 +8,17 @@ using System.Web.Security;
 
 namespace TheLegend.Models
 {
-    public class GameContext : DbContext
+    public class UserContext : DbContext
     {
-        public GameContext()
+        public UserContext()
             : base("DefaultConnection")
         {
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+
         public DbSet<Tag> Tags { get; set; }
+        
     }
 
 
@@ -27,10 +29,9 @@ namespace TheLegend.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
-        public string Birth { get; set; }
+        public DateTime Birth { get; set; }
         public string Sex { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
 
     }
 
@@ -93,6 +94,12 @@ namespace TheLegend.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public DateTime Birth { get; set; }
+
+        public string Sex { get; set; }
+
+        public string Email { get; set; }
     }
 
     public class ExternalLogin

@@ -5,14 +5,14 @@ namespace TheLegend.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TheLegend.Models.GameContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TheLegend.Models.UserContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(TheLegend.Models.GameContext context)
+        protected override void Seed(TheLegend.Models.UserContext context)
         {
             //  This method will be called after migrating to the latest version.
 
