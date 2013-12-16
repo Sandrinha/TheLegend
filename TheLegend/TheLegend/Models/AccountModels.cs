@@ -8,15 +8,17 @@ using System.Web.Security;
 
 namespace TheLegend.Models
 {
-    public class UsersContext : DbContext
+    public class GameContext : DbContext
     {
-        public UsersContext()
+        public GameContext()
             : base("DefaultConnection")
         {
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Tag> Tags { get; set; }
     }
+
 
     [Table("UserProfile")]
     public class UserProfile
@@ -25,6 +27,11 @@ namespace TheLegend.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string Birth { get; set; }
+        public string Sex { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+
     }
 
     public class RegisterExternalLoginModel

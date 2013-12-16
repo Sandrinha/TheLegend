@@ -183,12 +183,29 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312161925584_user.cs" />
+    <Compile Include="Migrations\201312161925584_user.Designer.cs">
+      <DependentUpon>201312161925584_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Registo.cs" />
+    <Compile Include="Models\Games.cs" />
+    <Compile Include="Models\Humor.cs" />
+    <Compile Include="Models\Interest.cs" />
+    <Compile Include="Models\Introductions.cs" />
+    <Compile Include="Models\MissionFail.cs" />
+    <Compile Include="Models\MissionPaths.cs" />
+    <Compile Include="Models\MissionPathsComponents.cs" />
+    <Compile Include="Models\Missions.cs" />
+    <Compile Include="Models\RelationShip.cs" />
+    <Compile Include="Models\States.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagRelations.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -303,12 +320,23 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Tag\Index.cshtml" />
+    <Content Include="Views\Tag\Details.cshtml" />
+    <Content Include="Views\Tag\Create.cshtml" />
+    <Content Include="Views\Tag\Edit.cshtml" />
+    <Content Include="Views\Tag\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201312161925584_user.resx">
+      <DependentUpon>201312161925584_user.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

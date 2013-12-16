@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TheLegend.Models
 {
-    public class Mission
+    public class Missions
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
 
@@ -16,5 +16,6 @@ namespace TheLegend.Models
         public int MissionStateID { get; set; }
         public int UserID { get; set; }
 
+       // public virtual ICollection <Registo> Registo { get; set; }
     }
 }

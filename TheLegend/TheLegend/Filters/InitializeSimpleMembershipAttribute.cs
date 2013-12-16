@@ -25,11 +25,11 @@ namespace TheLegend.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<GameContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new GameContext())
                     {
                         if (!context.Database.Exists())
                         {
