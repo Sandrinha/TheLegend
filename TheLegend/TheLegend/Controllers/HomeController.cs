@@ -10,7 +10,7 @@ namespace TheLegend.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to the game where you can find top making friends! ";
+            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View();
         }

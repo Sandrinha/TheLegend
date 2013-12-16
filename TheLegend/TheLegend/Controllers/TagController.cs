@@ -11,7 +11,7 @@ namespace TheLegend.Controllers
 {
     public class TagController : Controller
     {
-        private UserContext db = new UserContext();
+        private UsersContext db = new UsersContext();
 
         //
         // GET: /Tag/

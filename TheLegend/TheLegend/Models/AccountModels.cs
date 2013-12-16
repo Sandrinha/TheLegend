@@ -8,9 +8,9 @@ using System.Web.Security;
 
 namespace TheLegend.Models
 {
-    public class UserContext : DbContext
+    public class UsersContext : DbContext
     {
-        public UserContext()
+        public UsersContext()
             : base("DefaultConnection")
         {
         }
@@ -18,9 +18,7 @@ namespace TheLegend.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
-        
     }
-
 
     [Table("UserProfile")]
     public class UserProfile
@@ -32,7 +30,6 @@ namespace TheLegend.Models
         public DateTime Birth { get; set; }
         public string Sex { get; set; }
         public string Email { get; set; }
-
     }
 
     public class RegisterExternalLoginModel
