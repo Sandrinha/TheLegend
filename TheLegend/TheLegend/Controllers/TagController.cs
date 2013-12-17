@@ -5,7 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheLegend.Filters;
 using TheLegend.Models;
+using WebMatrix.WebData;
 
 namespace TheLegend.Controllers
 {
@@ -47,11 +49,16 @@ namespace TheLegend.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [InitializeSimpleMembership]
         public ActionResult Create(Tag tag)
         {
             if (ModelState.IsValid)
             {
                 db.Tags.Add(tag);
+                db.SaveChanges();
+                int iduser = WebSecurity.GetUserId(User.Identity.Name);
+                UserProfile u = db.UserProfiles.Find(iduser);
+                u.Tags.Add(tag);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -86,6 +86,11 @@ C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegen
 C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.InitialCreate.resources
 C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.use.resources
+<<<<<<< HEAD
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
+=======
+C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags1.resources
+>>>>>>> c9a07cd21c5d0237a3d70d64af806a78611baa01
