@@ -196,6 +196,14 @@
     <Compile Include="Migrations\201312162301260_use.Designer.cs">
       <DependentUpon>201312162301260_use.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312171848086_usertags.cs" />
+    <Compile Include="Migrations\201312171848086_usertags.Designer.cs">
+      <DependentUpon>201312171848086_usertags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312171906013_usertags1.cs" />
+    <Compile Include="Migrations\201312171906013_usertags1.Designer.cs">
+      <DependentUpon>201312171906013_usertags1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -330,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312162301260_use.resx">
       <DependentUpon>201312162301260_use.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312171848086_usertags.resx">
+      <DependentUpon>201312171848086_usertags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312171906013_usertags1.resx">
+      <DependentUpon>201312171906013_usertags1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

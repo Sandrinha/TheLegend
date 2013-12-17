@@ -86,3 +86,5 @@ C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegen
 C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.InitialCreate.resources
 C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.use.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags1.resources

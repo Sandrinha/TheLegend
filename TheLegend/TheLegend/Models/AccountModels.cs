@@ -31,7 +31,7 @@ namespace TheLegend.Models
         public string Sex { get; set; }
         public string Email { get; set; }
 
-        public virtual ICollection<Tag> lTag { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
     }
 
     public class RegisterExternalLoginModel
