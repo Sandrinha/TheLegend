@@ -18,6 +18,8 @@ namespace TheLegend.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<Ask> Asks { get; set; }
     }
 
     [Table("UserProfile")]

@@ -179,6 +179,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AskController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\TagController.cs" />
@@ -206,8 +207,13 @@
     <Compile Include="Migrations\201312182232505_tagsusers.Designer.cs">
       <DependentUpon>201312182232505_tagsusers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312182318528_ask.cs" />
+    <Compile Include="Migrations\201312182318528_ask.Designer.cs">
+      <DependentUpon>201312182318528_ask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Ask.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -334,6 +340,11 @@
     <Content Include="Views\Perfil\Index.cshtml" />
     <Content Include="Views\Perfil\Edit.cshtml" />
     <Content Include="Views\Perfil\MyTags.cshtml" />
+    <Content Include="Views\Ask\Index.cshtml" />
+    <Content Include="Views\Ask\Details.cshtml" />
+    <Content Include="Views\Ask\Create.cshtml" />
+    <Content Include="Views\Ask\Edit.cshtml" />
+    <Content Include="Views\Ask\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -354,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312182232505_tagsusers.resx">
       <DependentUpon>201312182232505_tagsusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312182318528_ask.resx">
+      <DependentUpon>201312182318528_ask.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
