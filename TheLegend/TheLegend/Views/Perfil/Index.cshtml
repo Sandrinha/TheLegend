@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TheLegend.Models.UserProfile>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model=>Model.UserName)
+                             
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Email)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Birth)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Sex)
+
+            </th>
+            
+        </tr>
+                @foreach (var item in this.Model)
+        {
+           if (item.UserId == WebMatrix.WebData.WebSecurity.GetUserId(User.Identity.Name))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Birth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sex)
+                    </td>
+                    
+                    <td> 
+                        @Html.ActionLink("Editar", "Edit", new { id = item.UserId })
+                    </td> 
+                </tr>
+                
+                <tr>
+                    <th>
+                        @Html.DisplayName("Os meus Interresses")
+
+                    </th>
+                    <td>
+                    @foreach (var tag in item.Tags.ToList())
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => tag.TagName)
+                            </td>
+                        </tr>
+                    }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -126,5 +126,17 @@ namespace TheLegend.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+        //Adicionar as Tags a lista do user logado
+        [InitializeSimpleMembership]
+        public ActionResult Adicionar(int id = 0)
+        {
+            Tag tag = db.Tags.Find(id);
+            int userid = WebSecurity.GetUserId(User.Identity.Name);
+            UserProfile user = db.UserProfiles.Find(userid);
+            user.Tags.Add(tag);
+            db.SaveChanges();
+
+            return RedirectToAction("Index","Perfil");
+        }
     }
 }
