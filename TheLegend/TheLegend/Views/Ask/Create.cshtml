@@ -1,0 +1,57 @@
+﻿@model TheLegend.Models.Ask
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Ask</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserAsk, "UserAsk")
+        </div>
+        <div class="editor-field">
+            @*@Html.ViewData.Add("UserAsk", String.Empty)*@
+           @Html.DropDownList("UserAsk", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserAsk)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserDestiny, "UserDestiny")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserDestiny", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserDestiny)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserOrigin, "UserOrigin")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserOrigin", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserOrigin)
+        </div>
+
+
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

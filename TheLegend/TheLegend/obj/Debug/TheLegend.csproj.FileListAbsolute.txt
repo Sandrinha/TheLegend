@@ -544,3 +544,5 @@ C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\ru\System.Spatial.r
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask1.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask11.resources

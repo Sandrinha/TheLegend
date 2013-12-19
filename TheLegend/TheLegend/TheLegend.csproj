@@ -211,6 +211,14 @@
     <Compile Include="Migrations\201312182318528_ask.Designer.cs">
       <DependentUpon>201312182318528_ask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312191925220_ask1.cs" />
+    <Compile Include="Migrations\201312191925220_ask1.Designer.cs">
+      <DependentUpon>201312191925220_ask1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312191933487_ask11.cs" />
+    <Compile Include="Migrations\201312191933487_ask11.Designer.cs">
+      <DependentUpon>201312191933487_ask11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Ask.cs" />
@@ -368,6 +376,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312182318528_ask.resx">
       <DependentUpon>201312182318528_ask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312191925220_ask1.resx">
+      <DependentUpon>201312191925220_ask1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312191933487_ask11.resx">
+      <DependentUpon>201312191933487_ask11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
