@@ -5,12 +5,12 @@
 
 user_profile(1,joao,[musica, porto],15-09-85,male,_,_,_).
 user_profile(2,joana,[musica, lisboa, dança, Csharp],1-02-85,female,_,_,_).
-user_profile(3,manuel,['C#', televisão, porto],10-05-84,male,_,_,_).
-user_profile(4,luis,[música, televisão, coimbra],25-09-80,male,_,_,_).
-user_profile(5,andreia,[teatro, música, porto],25-12-83,female,_,_,_).
-user_profile(6,josé,['C#', televisão, leiria],05-01-87,male,_,_,_).
-user_profile(7,antónio,[Csharp, tv, braga],9-06-90,male,_,_,_).
-user_profile(8,liliana,[dança, música, tv, leiria],23-11-88,female,_,_,_).
+user_profile(3,manuel,['C#', televisao, porto],10-05-84,male,_,_,_).
+user_profile(4,luis,[musica, televisao, coimbra],25-09-80,male,_,_,_).
+user_profile(5,andreia,[teatro, musica, porto],25-12-83,female,_,_,_).
+user_profile(6,jose,['C#', televisao, leiria],05-01-87,male,_,_,_).
+user_profile(7,antonio,[Csharp, tv, braga],9-06-90,male,_,_,_).
+user_profile(8,liliana,[danca, musica, tv, leiria],23-11-88,female,_,_,_).
 
 %user_conn(Id,ConnList).
 %ConnList=[(IdA,TagA,Strength1),(IdB,TagB,Strength2),...]
@@ -26,7 +26,7 @@ user_conn(8,[(2,amigo,3),(4,amigo,3),(5,amigo,3),(6,amigo,3),(7,amigo,3)]).
 
 %semantic_eq([tag1,tag2,...,tagn]).
 semantic_eq(['c#','csharp']).
-semantic_eq(['tv','televisão']).
+semantic_eq(['tv','televisao']).
 
 %%teste
 
@@ -63,12 +63,12 @@ set([H|T],Out) :-
     set(T,Out).
 
 %Exclusao
-diferença(L1,L2,LR):-	uniao(L1,L2,LU),
+diferenca(L1,L2,LR):-	uniao(L1,L2,LU),
 				inter(L1,L2,LI),
-				diferença2(LU,LI,LR).
-diferença2([],_,[]).	%só vamos guardar os elementos que não estão na lista dos comuns
-diferença2([H|T],LI,LR):-member(H,LI),!,diferença2(T,LI,LR).
-diferença2([H|T],LI,[H|LR]):-diferença2(T,LI,LR).
+				diferenca2(LU,LI,LR).
+diferenca2([],_,[]).	%so vamos guardar os elementos que nao estao na lista dos comuns
+diferenca2([H|T],LI,LR):-member(H,LI),!,diferenca2(T,LI,LR).
+diferenca2([H|T],LI,[H|LR]):-diferenca2(T,LI,LR).
 
 %Menor
 min([X],X).
@@ -78,7 +78,7 @@ min([Y|_],Y).
 
 
 
-%rede de amigos até 3ª grau
+%rede de amigos ate 3ª grau
 
 rede(User,Lamigos):-user_conn(User,L),
 			findall(Amigo,member((Amigo,_,_),L),Lamigos1),
@@ -89,6 +89,22 @@ rede(User,Lamigos):-user_conn(User,L),
 			apaga(User,Lamigost3,Lamigos3),
 			set(Lamigos3, Lamigos).
 
-			
+%Obter os amigos que tenham em comum X tags sendo X parametrizavel.
+%falta validaçao semantica(C# == CSharp)
 
+
+
+amigosTagComum(User,N,ListaF):-user_profile(User,_,LTags,_,_,_,_,_),
+					user_conn(User,L),
+					findall(Amigo,member((Amigo,_,_),L),Lamigos),
+					verifica_comum(User,N,LTags,Lamigos,ListaF).
+
+
+verifica_comum(_,_,_,[],[]).
+verifica_comum(_,N,LTagsUser,[H|T],[H|TF]):-user_profile(H,_,LTags,_,_,_,_,_),
+							inter(LTagsUser,LTags,Res),
+							length(Res,N1),
+							N1>=N,!,
+							verifica_comum(_,N,LTagsUser,T,TF).
+verifica_comum(_,N,LTagsUser,[_|T],LF):-verifica_comum(_,N,LTagsUser,T,LF).
 
