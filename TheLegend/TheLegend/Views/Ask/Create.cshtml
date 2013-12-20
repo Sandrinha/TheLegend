@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Pedidos de Introdução</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -13,38 +13,38 @@
     <fieldset>
         <legend>Ask</legend>
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserAsk, "UserAsk")
-        </div>
-        <div class="editor-field">
-            @*@Html.ViewData.Add("UserAsk", String.Empty)*@
-           @Html.DropDownList("UserAsk", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserAsk)
-        </div>
-
-
+           
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserDestiny, "UserDestiny")
+            @Html.LabelFor(model => model.UserAsk.UserId, "UserAsk")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("UserDestiny", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserDestiny)
+            @Html.DropDownList("UserAsk",String.Empty)
+            @Html.ValidationMessageFor(model => model.UserAsk.UserId)
         </div>
 
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserOrigin, "UserOrigin")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("UserOrigin", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserOrigin)
-        </div>
-
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserDestiny.UserId, "UserDestin")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserDestiny", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserDestiny.UserId)
+            </div>
 
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserOrigin.UserId, "UserOrigin")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("UserOrigin", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserOrigin.UserId)
+            </div>
+
+
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+</fieldset>
 }
 
 <div>

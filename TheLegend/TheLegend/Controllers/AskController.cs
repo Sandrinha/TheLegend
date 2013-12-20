@@ -39,12 +39,12 @@ namespace TheLegend.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.UserOrigin = new SelectList(db.UserProfiles, "UserId", "UserName");
-            ViewBag.UserDestiny = new SelectList(db.UserProfiles, "UserId", "UserName");
-            ViewBag.UserAsk = new SelectList(db.UserProfiles, "UserId", "UserName");
+            AskDropDownList();
 
-
-            
+            //ViewBag.UserOrigin = new SelectList(db.UserProfiles, "UserId", "UserName");
+            //ViewBag.UserDestiny = new SelectList(db.UserProfiles, "UserId", "UserName");
+            //ViewBag.UserAsk = new SelectList(db.UserProfiles, "UserId", "UserName");
+                    
             
             
             
@@ -52,12 +52,24 @@ namespace TheLegend.Controllers
 
         }
 
+        private void AskDropDownList(object userProfile = null)
+        {
+            var UserProfiles = from d in db.UserProfiles
+                               orderby d.UserName
+                               select d;
+            ViewBag.UserAsk = new SelectList(UserProfiles, "UserID", "UserName", userProfile);
+            ViewBag.UserOrigin = new SelectList(UserProfiles, "UserID", "UserName", userProfile);
+            ViewBag.UserDestiny = new SelectList(UserProfiles, "UserID", "UserName", userProfile);
+        }
+
         //
         // POST: /Ask/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Ask ask)
+        public ActionResult Create(
+            [Bind(Include = "AskID,UserOrigin,UserDestiny,UserAsk")]
+            Ask ask)
         {
             if (ModelState.IsValid)
             {
@@ -75,12 +87,22 @@ namespace TheLegend.Controllers
         public ActionResult Edit(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
-            if (ask == null)
-            {
-                return HttpNotFound();
-            }
+            //if (ask == null)
+            //{
+            //    return HttpNotFound();
+            //}
+
+            AskDropDownList(ask.UserAsk);
             return View(ask);
         }
+
+        //private void AskDropDownList(UserProfile userProfile)
+        //{
+        //    var UserProfiles = from d in db.Asks
+        //                       orderby d.UserAsk
+        //                       select d;
+        //    ViewBag.UserAsk = new SelectList(UserProfiles, "UserID", selectUser);
+        //}
 
         //
         // POST: /Ask/Edit/5
@@ -89,13 +111,24 @@ namespace TheLegend.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Ask ask)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(ask).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+            try { 
+                    if (ModelState.IsValid)
+                    {
+                        db.Entry(ask).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    } 
             }
+            catch (DataException /* dex */)
+               {
+                  //Log the error (uncomment dex variable name after DataException and add a line here to write a log.)
+                  ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+               }
+                             AskDropDownList(ask.UserAsk);
+                
+        
             return View(ask);
+        
         }
 
         //
@@ -129,5 +162,7 @@ namespace TheLegend.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public string selectUser { get; set; }
     }
 }
