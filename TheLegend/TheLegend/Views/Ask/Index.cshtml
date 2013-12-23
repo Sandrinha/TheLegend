@@ -11,17 +11,74 @@
 </p>
 <table>
     <tr>
-        <th></th>
+        <p>
+            Os meus Pedidos Por Tratar
+        </p>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAskId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserDestinId)
+        </th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
+        if (item.UserOriginId == WebSecurity.GetUserId(User.Identity.Name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserAskId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserDestinId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AskId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AskId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AskId })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<table>
     <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AskID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AskID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AskID })
-        </td>
+        <p>
+            Pedidos Por Tratar
+        </p>
     </tr>
-}
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserOriginId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserDestinId)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.UserAskId == WebSecurity.GetUserId(User.Identity.Name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserOriginId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserDestinId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AskId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AskId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AskId })
+                </td>
+            </tr>
+        }
+    }
 
 </table>

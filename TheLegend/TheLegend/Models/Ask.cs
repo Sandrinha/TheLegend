@@ -7,11 +7,11 @@ namespace TheLegend.Models
 {
     public class Ask
     {
-        public int AskID { get; set; }
-       //public int UserId { get; set; }
-        public virtual UserProfile UserOrigin { get; set; }
-        public virtual UserProfile UserDestiny { get; set; }
-        public virtual UserProfile UserAsk { get; set; }
+        public int AskId { get; set; }
+        public int UserAskId { get; set; }
 
+        public int UserOriginId { get; set; }
+
+        public int UserDestinId { get; set; }
     }
 }

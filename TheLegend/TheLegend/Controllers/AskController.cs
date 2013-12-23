@@ -5,7 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheLegend.Filters;
 using TheLegend.Models;
+using WebMatrix.WebData;
 
 namespace TheLegend.Controllers
 {
@@ -18,6 +20,7 @@ namespace TheLegend.Controllers
 
         public ActionResult Index()
         {
+
             return View(db.Asks.ToList());
         }
 
@@ -39,27 +42,9 @@ namespace TheLegend.Controllers
 
         public ActionResult Create()
         {
-            AskDropDownList();
-
-            //ViewBag.UserOrigin = new SelectList(db.UserProfiles, "UserId", "UserName");
-            //ViewBag.UserDestiny = new SelectList(db.UserProfiles, "UserId", "UserName");
-            //ViewBag.UserAsk = new SelectList(db.UserProfiles, "UserId", "UserName");
-                    
-            
-            
-            
+            ViewBag.UserAskId = new SelectList(db.UserProfiles, "UserId", "UserName");
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName");
             return View();
-
-        }
-
-        private void AskDropDownList(object userProfile = null)
-        {
-            var UserProfiles = from d in db.UserProfiles
-                               orderby d.UserName
-                               select d;
-            ViewBag.UserAsk = new SelectList(UserProfiles, "UserID", "UserName", userProfile);
-            ViewBag.UserOrigin = new SelectList(UserProfiles, "UserID", "UserName", userProfile);
-            ViewBag.UserDestiny = new SelectList(UserProfiles, "UserID", "UserName", userProfile);
         }
 
         //
@@ -67,10 +52,10 @@ namespace TheLegend.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(
-            [Bind(Include = "AskID,UserOrigin,UserDestiny,UserAsk")]
-            Ask ask)
+        [InitializeSimpleMembership]
+        public ActionResult Create(Ask ask)
         {
+            ask.UserOriginId = WebSecurity.GetUserId(User.Identity.Name);
             if (ModelState.IsValid)
             {
                 db.Asks.Add(ask);
@@ -87,22 +72,12 @@ namespace TheLegend.Controllers
         public ActionResult Edit(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
-            //if (ask == null)
-            //{
-            //    return HttpNotFound();
-            //}
-
-            AskDropDownList(ask.UserAsk);
+            if (ask == null)
+            {
+                return HttpNotFound();
+            }
             return View(ask);
         }
-
-        //private void AskDropDownList(UserProfile userProfile)
-        //{
-        //    var UserProfiles = from d in db.Asks
-        //                       orderby d.UserAsk
-        //                       select d;
-        //    ViewBag.UserAsk = new SelectList(UserProfiles, "UserID", selectUser);
-        //}
 
         //
         // POST: /Ask/Edit/5
@@ -111,24 +86,13 @@ namespace TheLegend.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Ask ask)
         {
-            try { 
-                    if (ModelState.IsValid)
-                    {
-                        db.Entry(ask).State = EntityState.Modified;
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
-                    } 
+            if (ModelState.IsValid)
+            {
+                db.Entry(ask).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            catch (DataException /* dex */)
-               {
-                  //Log the error (uncomment dex variable name after DataException and add a line here to write a log.)
-                  ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
-               }
-                             AskDropDownList(ask.UserAsk);
-                
-        
             return View(ask);
-        
         }
 
         //
@@ -162,7 +126,5 @@ namespace TheLegend.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-
-        public string selectUser { get; set; }
     }
 }
