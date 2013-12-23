@@ -48,7 +48,13 @@
             @Html.EditorFor(model => model.Sex)
             @Html.ValidationMessageFor(model => model.Sex)
         </div>
-
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Humor.EstadoHumor,"HumorId")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("HumorId",String.Empty)
+            @Html.ValidationMessageFor(model => model.Humor.EstadoHumor)
+        </div>
 
 
 

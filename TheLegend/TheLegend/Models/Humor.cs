@@ -7,7 +7,11 @@ namespace TheLegend.Models
 {
     public class Humor
     {
-        public int HumorID { get; set; }
-        public string Name { get; set; }
+       
+            public int HumorId { get; set; }
+            public string EstadoHumor { get; set; }
+
+            public virtual ICollection<UserProfile> Users { get; set; }
+        
     }
 }

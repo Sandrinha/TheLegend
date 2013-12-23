@@ -23,6 +23,7 @@ namespace TheLegend.Controllers
         public ActionResult Edit(int id = 0)
         {
             UserProfile user = bd.UserProfiles.Find(id);
+            ViewBag.HumorId = new SelectList(bd.Humors, "HumorId", "EstadoHumor");
             if (user == null)
             {
                 return HttpNotFound();
