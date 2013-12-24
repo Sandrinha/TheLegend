@@ -23,7 +23,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(Model => Model.Sex)
-
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Humor.EstadoHumor)
             </th>
             
         </tr>
@@ -43,6 +45,10 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Sex)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Humor.EstadoHumor)
                     </td>
                     
                     <td> 

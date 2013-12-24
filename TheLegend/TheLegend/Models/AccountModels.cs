@@ -20,6 +20,8 @@ namespace TheLegend.Models
         public DbSet<Tag> Tags { get; set; }
 
         public DbSet<Ask> Asks { get; set; }
+
+        public DbSet<Humor> Humors { get; set; }
     }
 
     [Table("UserProfile")]
@@ -32,6 +34,9 @@ namespace TheLegend.Models
         public DateTime Birth { get; set; }
         public string Sex { get; set; }
         public string Email { get; set; }
+        public int HumorId { get; set; }
+
+        public virtual Humor Humor { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
     }

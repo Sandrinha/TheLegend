@@ -181,6 +181,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AskController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HumorController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -223,9 +224,14 @@
     <Compile Include="Migrations\201312230109569_AskFinal.Designer.cs">
       <DependentUpon>201312230109569_AskFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312232111575_humor.cs" />
+    <Compile Include="Migrations\201312232111575_humor.Designer.cs">
+      <DependentUpon>201312232111575_humor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Ask.cs" />
+    <Compile Include="Models\Humor.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -357,6 +363,11 @@
     <Content Include="Views\Ask\Create.cshtml" />
     <Content Include="Views\Ask\Edit.cshtml" />
     <Content Include="Views\Ask\Delete.cshtml" />
+    <Content Include="Views\Humor\Index.cshtml" />
+    <Content Include="Views\Humor\Details.cshtml" />
+    <Content Include="Views\Humor\Create.cshtml" />
+    <Content Include="Views\Humor\Edit.cshtml" />
+    <Content Include="Views\Humor\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -389,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312230109569_AskFinal.resx">
       <DependentUpon>201312230109569_AskFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312232111575_humor.resx">
+      <DependentUpon>201312232111575_humor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
