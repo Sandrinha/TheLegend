@@ -5,9 +5,11 @@ using System.Web;
 
 namespace TheLegend.Models
 {
-    public class States
+    public class State
     {
         public int StateId { get; set; }
-        public string stateName { get; set; }
+        public string Name { get; set; }
+
+        public virtual ICollection<Introdution> introdutions { get; set; }
     }
 }

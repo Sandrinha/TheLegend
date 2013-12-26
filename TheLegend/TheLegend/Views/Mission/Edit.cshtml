@@ -1,0 +1,54 @@
+﻿@model TheLegend.Models.Mission
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Mission</legend>
+
+        @Html.HiddenFor(model => model.MissionId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TargetUser)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TargetUser)
+            @Html.ValidationMessageFor(model => model.TargetUser)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsComplete)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsComplete)
+            @Html.ValidationMessageFor(model => model.IsComplete)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId, "User")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserId", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

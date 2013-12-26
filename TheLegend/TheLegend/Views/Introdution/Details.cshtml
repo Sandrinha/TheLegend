@@ -1,0 +1,57 @@
+﻿@model TheLegend.Models.Introdution
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Introdution</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.mission.MissionId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mission.MissionId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserOriginId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserOriginId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserDestinId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserDestinId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.game.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.game.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GameResult)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GameResult)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.state.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.state.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IntrodutionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

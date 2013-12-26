@@ -22,6 +22,14 @@ namespace TheLegend.Models
         public DbSet<Ask> Asks { get; set; }
 
         public DbSet<Humor> Humors { get; set; }
+
+        public DbSet<Mission> Missions { get; set; }
+
+        public DbSet<Game> Games { get; set; }
+
+        public DbSet<State> States { get; set; }
+
+        public DbSet<Introdution> Introdutions { get; set; }
     }
 
     [Table("UserProfile")]
@@ -37,6 +45,8 @@ namespace TheLegend.Models
         public int HumorId { get; set; }
 
         public virtual Humor Humor { get; set; }
+
+        public virtual ICollection<Mission> Missions { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
     }

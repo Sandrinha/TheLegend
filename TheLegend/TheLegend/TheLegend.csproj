@@ -180,9 +180,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AskController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HumorController.cs" />
+    <Compile Include="Controllers\IntrodutionController.cs" />
+    <Compile Include="Controllers\MissionController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -228,10 +232,34 @@
     <Compile Include="Migrations\201312232111575_humor.Designer.cs">
       <DependentUpon>201312232111575_humor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312251155511_mission.cs" />
+    <Compile Include="Migrations\201312251155511_mission.Designer.cs">
+      <DependentUpon>201312251155511_mission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312252347598_game.cs" />
+    <Compile Include="Migrations\201312252347598_game.Designer.cs">
+      <DependentUpon>201312252347598_game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312252359142_game_name.cs" />
+    <Compile Include="Migrations\201312252359142_game_name.Designer.cs">
+      <DependentUpon>201312252359142_game_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312260010246_State.cs" />
+    <Compile Include="Migrations\201312260010246_State.Designer.cs">
+      <DependentUpon>201312260010246_State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312260025086_introdution.cs" />
+    <Compile Include="Migrations\201312260025086_introdution.Designer.cs">
+      <DependentUpon>201312260025086_introdution.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Ask.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Humor.cs" />
+    <Compile Include="Models\Introdution.cs" />
+    <Compile Include="Models\Mission.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -368,6 +396,26 @@
     <Content Include="Views\Humor\Create.cshtml" />
     <Content Include="Views\Humor\Edit.cshtml" />
     <Content Include="Views\Humor\Delete.cshtml" />
+    <Content Include="Views\Mission\Index.cshtml" />
+    <Content Include="Views\Mission\Details.cshtml" />
+    <Content Include="Views\Mission\Create.cshtml" />
+    <Content Include="Views\Mission\Edit.cshtml" />
+    <Content Include="Views\Mission\Delete.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
+    <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\State\Index.cshtml" />
+    <Content Include="Views\State\Details.cshtml" />
+    <Content Include="Views\State\Create.cshtml" />
+    <Content Include="Views\State\Edit.cshtml" />
+    <Content Include="Views\State\Delete.cshtml" />
+    <Content Include="Views\Introdution\Index.cshtml" />
+    <Content Include="Views\Introdution\Details.cshtml" />
+    <Content Include="Views\Introdution\Create.cshtml" />
+    <Content Include="Views\Introdution\Edit.cshtml" />
+    <Content Include="Views\Introdution\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -403,6 +451,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312232111575_humor.resx">
       <DependentUpon>201312232111575_humor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312251155511_mission.resx">
+      <DependentUpon>201312251155511_mission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312252347598_game.resx">
+      <DependentUpon>201312252347598_game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312252359142_game_name.resx">
+      <DependentUpon>201312252359142_game_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312260010246_State.resx">
+      <DependentUpon>201312260010246_State.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312260025086_introdution.resx">
+      <DependentUpon>201312260025086_introdution.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

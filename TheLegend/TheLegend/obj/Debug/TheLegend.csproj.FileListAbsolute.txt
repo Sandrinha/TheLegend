@@ -644,3 +644,9 @@ C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.humor.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.humor.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.mission.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.game.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.game_name.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.State.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.introdution.resources

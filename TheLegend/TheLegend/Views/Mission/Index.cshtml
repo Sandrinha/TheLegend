@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TheLegend.Models.Mission>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.UserId == WebSecurity.GetUserId(User.Identity.Name)) { 
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsComplete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MissionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MissionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MissionId })
+        </td>
+    </tr>
+    }
+}
+
+</table>
