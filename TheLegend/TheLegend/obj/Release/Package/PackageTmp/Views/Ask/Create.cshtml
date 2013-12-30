@@ -1,0 +1,47 @@
+﻿@model TheLegend.Models.Ask
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Ask</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserAskId, "UserAskId")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserAskId", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserAskId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserDestinId, "UserDestinId")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserDestinId", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserDestinId)
+        </div>
+
+
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

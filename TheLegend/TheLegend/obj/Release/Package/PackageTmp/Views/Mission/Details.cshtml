@@ -1,0 +1,36 @@
+﻿@model TheLegend.Models.Mission
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Mission</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TargetUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TargetUser)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsComplete)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsComplete)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MissionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

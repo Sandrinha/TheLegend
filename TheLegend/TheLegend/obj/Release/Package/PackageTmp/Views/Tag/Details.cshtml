@@ -1,0 +1,22 @@
+﻿@model TheLegend.Models.Tag
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Tag</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TagName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TagName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TagID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

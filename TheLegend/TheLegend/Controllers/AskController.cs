@@ -121,6 +121,48 @@ namespace TheLegend.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Responder(int id = 0)
+        {
+            Ask ask = db.Asks.Find(id);
+            Introdution introdution = new Introdution();
+            
+            UserProfile user = db.UserProfiles.Find(ask.UserOriginId);
+
+            Mission[] auxmisson = db.Missions.ToArray();
+
+            Mission mission = new Mission();
+
+            for (int i = 0; i < auxmisson.Length; i++)
+            {
+                if (auxmisson[i].UserId == WebSecurity.GetUserId(User.Identity.Name))
+                {
+                    if (!auxmisson[i].IsComplete)
+                    {
+                        mission = auxmisson[i];
+                    }
+                }
+            }
+
+
+            introdution.MissionId = mission.MissionId;
+            introdution.mission = mission;
+            introdution.UserOriginId = ask.UserOriginId;
+            introdution.UserDestinId = ask.UserDestinId;
+            introdution.StateId = 1;
+            introdution.state = db.States.Find(1);
+            introdution.GameId = 4;
+            introdution.game = db.Games.Find(4);
+            introdution.GameResult = false;
+
+            db.Asks.Remove(ask);
+            db.SaveChanges();
+
+            db.Introdutions.Add(introdution);
+            db.SaveChanges();
+
+            return RedirectToAction("Index","Introdution");
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
