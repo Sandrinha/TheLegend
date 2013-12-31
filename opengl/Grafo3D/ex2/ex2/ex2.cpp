@@ -123,6 +123,26 @@ void Init(void)
 	glEnable(GL_DEPTH_TEST);
 	//glutIgnoreKeyRepeat(GL_TRUE);
 
+
+
+	//luz
+	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+
+	// intensidade e cor
+	GLfloat qaAmbientLight[] = { 0.2, 0.2, 0.2, 1.0 };
+	GLfloat qaDiffuseLight[] = { 0.8, 0.8, 0.8, 1.0 };
+	GLfloat qaSpecularLight[] = { 1.0, 1.0, 1.0, 1.0 };
+	
+	glLightfv(GL_LIGHT0, GL_AMBIENT, qaAmbientLight);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, qaDiffuseLight);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, qaSpecularLight);
+
+	//// posição da luz
+	//GLfloat qaLightPosition[] = {29.5, 29.5, 29.5, 1.0};
+	//glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
+
 }
 
 /**************************************
@@ -243,7 +263,17 @@ void renderCylinder(float x1, float y1, float z1, float x2, float y2, float z2, 
 	float ry = vx*vz;
 	glPushMatrix();
 
+	// material
+	GLfloat cor[] = { 0.2, 0.3, 0.23, 1.0 };
+	GLfloat qaWhite[] = { 1.0, 1.0, 1.0, 1.0 };
+
+	glMaterialfv(GL_FRONT, GL_AMBIENT, cor);
+	glMaterialfv(GL_FRONT, GL_DIFFUSE, cor);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
+	glMaterialf(GL_FRONT, GL_SHININESS, 60.0);
+
 	//draw the cylinder body
+	//glColor3f(0.0,0.5,0.2);
 	glTranslatef(x1, y1, z1);
 	glRotatef(ax, rx, ry, 0.0);
 	gluQuadricOrientation(quadric, GLU_OUTSIDE);
@@ -329,7 +359,17 @@ void eixos()
 
 void desenhaEsfera(GLfloat v[], GLfloat cor[])
 {
-	glColor3fv(cor);
+
+	// material
+	GLfloat qaBlack[] = {0.0, 0.0, 0.0, 1.0};
+	GLfloat qaWhite[] = { 1.0, 1.0, 1.0, 1.0 };
+
+	glMaterialfv(GL_FRONT, GL_AMBIENT, cor);
+	glMaterialfv(GL_FRONT, GL_DIFFUSE, cor);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
+	glMaterialf(GL_FRONT, GL_SHININESS, 60.0);
+
+	//glColor3fv(cor);
 	//glRotatef(15, 1, 0, 0);
 	glTranslatef(v[0], v[1], v[2]);
 	glutSolidSphere(1, 20.0, 20.0); // raio, slices stacks
@@ -341,7 +381,7 @@ void desenhaEstrela(int no, GLfloat v[], GLfloat cor[], int p){
 	//printf("\n\nestou em no %d (%2.2f, %2.2f, %2.2f) p=%d \n", no, v[0], v[1], v[2],p);
 
 		glPushMatrix();
-		desenhaEsfera(v, cor);		
+		desenhaEsfera(v, cores[p++]);		
 		
 		double ang = 2 * M_PI / numero_de_amigos[no];
 		double ang2 = ang;
@@ -381,6 +421,10 @@ void Draw(void)
 	  glRotatef(modelo.theta[1], 0, 1, 0);
 	  glRotatef(modelo.theta[2], 0, 0, 1);
 	  
+	  // posição da luz
+	  GLfloat qaLightPosition[] = { 29.5, 29.5, 29.5, 1.0 };
+	  glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
+
 	  int n_arcos = sizeof(arcos) / sizeof(arcos[0]);
 	  int namigos = sizeof(amigos) / sizeof(amigos[0]);
 
@@ -393,18 +437,11 @@ void Draw(void)
 		  int a = arcos[i][0];
 		  numero_de_amigos[a]++;
 	  }
-	  glPushMatrix();
-	  glColor3f(0.7,0.7,0.3);
-	  glTranslatef(2.0, 6.0, 14.0);
-	  glutSolidSphere(1, 20.0, 20.0); // raio, slices stacks
-	  glPopMatrix();
 
 
 
-	  printf("########\n");
+
 	  desenhaEstrela(0, self, cores[0], 0);
-	  //printf("########\n");
-
 
 	glPopMatrix();
 
