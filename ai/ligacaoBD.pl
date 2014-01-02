@@ -13,6 +13,7 @@ init_bd:-  odbc_connect('TheLegend', _,
                        open(once)
                      ]).
 
-teste :-
+teste(X) :-
         odbc_query(thelegend,
-                   'SELECT * FROM User').
+                   'select * from dbo.Tags', X).
+
