@@ -13,6 +13,7 @@
 #include <math.h>
 #include <time.h>
 #include <GL/glut.h>
+#include <mmsystem.h>
 
 #ifndef M_PI
 #define M_PI 3.1415926535897932384626433832795
@@ -53,6 +54,15 @@ typedef struct {
 
 Estado estado;
 Modelo modelo;
+
+/* picking tolerance in pixels: */
+#define PICK_TOL 10. 
+
+/* how big to make the pick buffer: */
+#define PICK_BUFFER_SIZE 256 
+unsigned int PickBuffer[PICK_BUFFER_SIZE]; /* picking buffer */
+
+GLint RenderMode;
 
 GLfloat self[] = {0.0,0.0,0.0};
 
@@ -111,6 +121,8 @@ void inicia_modelo()
 	//  modelo.sentidoRotacao =1;  //sentido contrário aos ponteiros do relógio
 	modelo.translacaoCubo = LADO_MAXIMO * 2;
 	modelo.thetaCubo = 0;
+
+	RenderMode = GL_RENDER;	
 }
 
 void Init(void)
@@ -123,7 +135,7 @@ void Init(void)
 	glEnable(GL_DEPTH_TEST);
 	//glutIgnoreKeyRepeat(GL_TRUE);
 
-
+		
 
 	//luz
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
@@ -357,7 +369,7 @@ void eixos()
 	eixo(0, 0, 1, colors[2]);
 }
 
-void desenhaEsfera(GLfloat v[], GLfloat cor[])
+void desenhaEsfera(int no, GLfloat v[], GLfloat cor[])
 {
 
 	// material
@@ -371,6 +383,7 @@ void desenhaEsfera(GLfloat v[], GLfloat cor[])
 
 	//glColor3fv(cor);
 	//glRotatef(15, 1, 0, 0);
+	glLoadName(no);
 	glTranslatef(v[0], v[1], v[2]);
 	glutSolidSphere(1, 20.0, 20.0); // raio, slices stacks
 }
@@ -381,7 +394,7 @@ void desenhaEstrela(int no, GLfloat v[], GLfloat cor[], int p){
 	//printf("\n\nestou em no %d (%2.2f, %2.2f, %2.2f) p=%d \n", no, v[0], v[1], v[2],p);
 
 		glPushMatrix();
-		desenhaEsfera(v, cores[p++]);		
+		desenhaEsfera(no, v, cores[p++]);		
 		
 		double ang = 2 * M_PI / numero_de_amigos[no];
 		double ang2 = ang;
@@ -674,8 +687,8 @@ void MouseMotion(int x, int y)
 
 
 
-	if (DEBUG)
-		printf("Mouse Motion %d %d\n", x, y);
+	//if (DEBUG)
+	//	printf("Mouse Motion %d %d\n", x, y);
 
 }
 
@@ -685,8 +698,8 @@ void MousePassiveMotion(int x, int y)
 	sem estar a carregar em teclas
 	*/
 
-	if (DEBUG)
-		printf("Mouse Passive Motion %d %d\n", x, y);
+	//if (DEBUG)
+	//	printf("Mouse Passive Motion %d %d\n", x, y);
 
 }
 
@@ -696,6 +709,9 @@ void Mouse(int button, int state, int x, int y)
 	state  => GLUT_UP, GLUT_DOWN
 	x,y    => coordenadas do ponteiro quando se carrega numa tecla do rato
 	*/
+	GLint Nhits;
+
+
 
 	//switch (button){
 	//case GLUT_LEFT_BUTTON:
@@ -736,6 +752,10 @@ int main(int argc, char **argv)
 	string username;
 	string userpass;
 
+
+	
+	PlaySound(TEXT("background.wav"), NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+
 	bool ciclo = true;
 
 	while (ciclo){
@@ -767,6 +787,9 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(((estado.doubleBuffer) ? GLUT_DOUBLE : GLUT_SINGLE) | GLUT_RGB | GLUT_DEPTH);
 	if (glutCreateWindow("Exemplo") == GL_FALSE)
 		exit(1);
+
+	/* setup the picking buffer: */
+	glSelectBuffer(PICK_BUFFER_SIZE, PickBuffer);
 
 	Init();
 
