@@ -419,8 +419,11 @@
     <Content Include="Views\Introdution\Create.cshtml" />
     <Content Include="Views\Introdution\Edit.cshtml" />
     <Content Include="Views\Introdution\Delete.cshtml" />
+    <Content Include="Views\Shared\_LanguageSelector.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

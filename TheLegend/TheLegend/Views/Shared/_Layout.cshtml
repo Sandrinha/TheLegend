@@ -14,9 +14,14 @@
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("Game", "Index", "Home")</p>
                 </div>
+
                 <div class="float-right">
+
                     <section id="login">
-                        @Html.Partial("_LoginPartial")
+                        <ul>
+                            @Html.Partial("_LanguageSelector")
+                            @Html.Partial("_LoginPartial")
+                        </ul>
                     </section>
                     <nav>
                         <ul id="menu">
