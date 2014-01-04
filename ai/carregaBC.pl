@@ -49,6 +49,14 @@ apaga(_,[],[]).
 apaga(X,[X|L],M):-!,apaga(X,L,M).
 apaga(X,[Y|L],[Y|M]):-apaga(X,L,M).
 
+/****************
+apagalista/3
+apaga os elementos da lista do 2º argumento da lista do 1º argumento originando a lista do 3º argumento
+****************/
+
+apagalista([],_,[]).
+apagalista([H|T], L, LR):- member(H, L), apagalista(T, L, LR), !.
+apagalista([H|T], L, [H|TLR]):- apagalista(T, L, TLR).
 
 /****************
 conta_lista/2
@@ -204,3 +212,37 @@ verifica_comum(_,N,LTagsUser,[H|T],[H|TF]):-
 			verifica_comum(_,N,LTagsUser,T,TF).
 verifica_comum(_,N,LTagsUser,[_|T],LF):-
 			verifica_comum(_,N,LTagsUser,T,LF).
+
+
+/*******************
+sugere_amigos/2
+sugere ao elemento do 1º argumento uma lista de potenciais amigos tendo por base as tags e conexoes 
+partilhadas (até 3º nivel) guardando essa lista no 2º argumento
+*******************/
+
+sugere_amigos(User,LSug):-
+			listar_amigos(User,Lamigos),
+			listar_amigos3(User,Lamigos3),
+			apagalista(Lamigos3,Lamigos,LPAmigos),
+			listaTagsUser(User,LTags),
+			sugere_amigos(User,LTags,LPAmigos,LSug).
+
+
+/*******************
+sugere_amigos/4
+guarda todos os elementos da lista do 3º argumento que partilhem pelo menos 1 tag com a lista de tags 
+do 2º argumento originando uma lista de potenciais amigos guardada no 4º argumento
+*******************/
+
+sugere_amigos(_,_,[],[]).
+
+sugere_amigos(_,LTagsUser,[H|T],[H|LF]):-
+			listaTagsUser(H,LTags),
+			inter(LTagsUser,LTags,Res),
+			conta_lista(Res,N),
+			N>=1,!,
+			sugere_amigos(_,LTagsUser,T,LF).
+
+sugere_amigos(_,LTagsUser,[_|T],LF):-
+			sugere_amigos(_,LTagsUser,T,LF).
+
