@@ -8,6 +8,16 @@ Control Panel > Administrative Tools > Data Sources (ODBC) > Adicionar DNS "TheL
 
 
 /****************
+inter/3:
+faz a interseccao entre as listas do primeiro e segundo argumento e guarda-a na lista do terceiro argumento
+****************/
+
+inter([],_,[]).
+inter([X|L1],L2,[X|LI]):-member(X,L2),!,inter(L1,L2,LI).
+inter([_|L1],L2,LI):- inter(L1,L2,LI).
+
+
+/****************
 uniao/3:
 faz a uniao entre as listas do primeiro e segundo argumento e guarda-a na lista do terceiro argumento
 ****************/
@@ -100,6 +110,21 @@ carrega_conn(Conn) :-
 
 
 /******************
+Carrega_tagsUser/1:
+carrega todas as tags de todos os utilizadores para a Lista do 1º argumento
+agsUsers = [(1, 3), (2, 3), (2, 5), (Tag_TagID, UserProfile_UserId)]
+
+******************/
+
+carrega_tagsUsers(TagsUsers) :- 
+        findall((TagId,UserId), 
+		odbc_query(thelegend,
+                'select * from dbo.TagUserProfiles', 
+		row(TagId,UserId)),
+		TagsUsers).
+
+
+/******************
 listar_amigos/2:
 cria uma lista com todos os amigos do 1º argumento e guarda-a na lista do 2º argumento
 ******************/
@@ -142,3 +167,40 @@ onta todos os amigos até 3º grau do 1º argumento e guarda-o no 2º argumento
 conta_amigos3(Z,Namigos):-
 		listar_amigos3(Z,L),
 		conta_lista(L,Namigos).
+
+/******************
+listaTagsUser/2
+guarda todas os ids das tags do utilizador do 1º argumento e guarda-as na lista do 2º argumento
+******************/
+
+listaTagsUser(User,LTags):-
+			carrega_tagsUsers(LTU),
+			findall(T,member((T,User),LTU),LTags).
+
+
+/******************
+amigosTagComum/3
+guarda os amigos do 1º argumento com N tags em comum na lista do 3º argumento sendo N o segundo argumento
+******************/
+
+amigosTagComum(User,N,LF):-
+			listaTagsUser(User,LTagsUser),
+			listar_amigos(User,Lamigos),
+			verifica_comum(User,N,LTagsUser,Lamigos,LF).
+			
+
+/******************
+verifica_comum/5
+verifica todas as tags dos elementos da lista do 4º argumento e guarda na lista do 5º argumento
+os amigos que tem N tags em comum da lista do 3º argumento sendo N o elemento do 2º argumento
+******************/
+
+verifica_comum(_,_,_,[],[]).
+verifica_comum(_,N,LTagsUser,[H|T],[H|TF]):-
+			listaTagsUser(H,LTags),
+			inter(LTagsUser,LTags,Res),
+			conta_lista(Res,N1),
+			N1>=N,!,
+			verifica_comum(_,N,LTagsUser,T,TF).
+verifica_comum(_,N,LTagsUser,[_|T],LF):-
+			verifica_comum(_,N,LTagsUser,T,LF).
