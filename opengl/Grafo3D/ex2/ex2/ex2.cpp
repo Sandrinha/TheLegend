@@ -30,7 +30,19 @@
 
 /* VARIAVEIS GLOBAIS */
 
+typedef struct pos_t{
+	GLfloat    x, y, z;
+}pos_t;
+
+typedef struct camera_t{
+	pos_t    eye;
+	GLfloat  dir_long;  // longitude olhar (esq-dir)
+	GLfloat  dir_lat;   // latitude olhar	(cima-baixo)
+	GLfloat  fov;
+}camera_t;
+
 typedef struct {
+	camera_t      camera;
 	GLboolean   doubleBuffer;
 	GLint       delayMovimento;
 	GLboolean   debug;
@@ -59,10 +71,12 @@ Modelo modelo;
 #define PICK_TOL 10. 
 
 /* how big to make the pick buffer: */
-#define PICK_BUFFER_SIZE 256 
+#define PICK_BUFFER_SIZE 256 
+
 unsigned int PickBuffer[PICK_BUFFER_SIZE]; /* picking buffer */
 
-GLint RenderMode;
+GLint RenderMode;
+
 
 GLfloat self[] = {0.0,0.0,0.0};
 
@@ -122,7 +136,8 @@ void inicia_modelo()
 	modelo.translacaoCubo = LADO_MAXIMO * 2;
 	modelo.thetaCubo = 0;
 
-	RenderMode = GL_RENDER;	
+	RenderMode = GL_RENDER;
+	
 }
 
 void Init(void)
@@ -154,6 +169,13 @@ void Init(void)
 	//// posição da luz
 	//GLfloat qaLightPosition[] = {29.5, 29.5, 29.5, 1.0};
 	//glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
+
+	estado.camera.eye.x = 0;
+	estado.camera.eye.y = 10;
+	estado.camera.eye.z = 0;
+	estado.camera.dir_long = 0;
+	estado.camera.dir_lat = 0;
+	estado.camera.fov = 60;
 
 }
 
@@ -429,14 +451,10 @@ void Draw(void)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	/* ... chamada das rotinas auxiliares de desenho ... */
 
-	glPushMatrix();
-	  glRotatef(modelo.theta[0], 1, 0, 0);
-	  glRotatef(modelo.theta[1], 0, 1, 0);
-	  glRotatef(modelo.theta[2], 0, 0, 1);
-	  
-	  // posição da luz
-	  GLfloat qaLightPosition[] = { 29.5, 29.5, 29.5, 1.0 };
-	  glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
+
+	// posição da luz
+	GLfloat qaLightPosition[] = { 29.5, 29.5, 29.5, 1.0 };
+	glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
 
 	  int n_arcos = sizeof(arcos) / sizeof(arcos[0]);
 	  int namigos = sizeof(amigos) / sizeof(amigos[0]);
@@ -451,8 +469,22 @@ void Draw(void)
 		  numero_de_amigos[a]++;
 	  }
 
+	glPushMatrix();
+	glTranslatef(-18, 18, 0);
+	glRotatef(90, 1, 0, 0);
+	glScalef(0.5, 0.5, 0.5);
+	desenhaEstrela(0, self, cores[0], 0);
+	glPopMatrix();
 
 
+
+	glPushMatrix();
+
+	//gluLookAt(cam->eye.x, cam->eye.y, cam->eye.z, center.x, center.y, center.z, 0, 1, 0);
+
+	  glRotatef(modelo.theta[0], 1, 0, 0);
+	  glRotatef(modelo.theta[1], 0, 1, 0);
+	  glRotatef(modelo.theta[2], 0, 0, 1);
 
 	  desenhaEstrela(0, self, cores[0], 0);
 
@@ -542,6 +574,10 @@ void imprime_ajuda(void)
 	printf("+   - Aumentar tamanho dos Cubos\n");
 	printf("-   - Diminuir tamanho dos Cubos\n");
 	printf("i,I - Reiniciar Variáveis\n");
+	printf("s,S - Sound OFF/sound ON\n");
+	printf("x,X - Rotação em X\n");
+	printf("y,Y - Rotação em Y\n");
+	printf("z,Z - Rotação em Z\n");
 	printf("p,p - Iniciar/Parar movimento dos cubinhos\n");
 	printf("ESC - Sair\n");
 	printf("teclas do rato para iniciar/parar rotação e alternar eixos\n");
@@ -576,6 +612,13 @@ void Key(unsigned char key, int x, int y)
 			modelo.ladoCubo -= DELTA_LADO;
 			glutPostRedisplay();
 		}
+		break;
+
+	case 's':
+		PlaySound(NULL, NULL, NULL);
+		break;
+	case 'S':
+		PlaySound(TEXT("background.wav"), NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
 		break;
 
 	case 'i':
@@ -711,7 +754,8 @@ void Mouse(int button, int state, int x, int y)
 	*/
 	GLint Nhits;
 
-
+
+
 
 	//switch (button){
 	//case GLUT_LEFT_BUTTON:
@@ -789,7 +833,8 @@ int main(int argc, char **argv)
 		exit(1);
 
 	/* setup the picking buffer: */
-	glSelectBuffer(PICK_BUFFER_SIZE, PickBuffer);
+	glSelectBuffer(PICK_BUFFER_SIZE, PickBuffer);
+
 
 	Init();
 
