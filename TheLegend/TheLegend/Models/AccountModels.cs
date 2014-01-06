@@ -30,6 +30,10 @@ namespace TheLegend.Models
         public DbSet<State> States { get; set; }
 
         public DbSet<Introdution> Introdutions { get; set; }
+
+        public DbSet<TagRelation> TagRelations { get; set; }
+
+        public DbSet<RelationShip> RelationShips { get; set; }
     }
 
     [Table("UserProfile")]

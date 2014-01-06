@@ -14,14 +14,9 @@
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("Game", "Index", "Home")</p>
                 </div>
-
                 <div class="float-right">
-
                     <section id="login">
-                        <ul>
-                            @Html.Partial("_LanguageSelector")
-                            @Html.Partial("_LoginPartial")
-                        </ul>
+                        @Html.Partial("_LoginPartial")
                     </section>
                     <nav>
                         <ul id="menu">
@@ -33,9 +28,11 @@
                             <li>@Html.ActionLink("Pedidos", "Index", "Ask")</li>
                             @*<li>@Html.ActionLink("Humor", "Index", "Humor")</li>*@
                             <li>@Html.ActionLink("Missião", "Index", "Mission")</li>
-                            @*<li>@Html.ActionLink("Jogos", "Index", "Game")</li>
+                            @*<li>@Html.ActionLink("TagRelation", "Index", "TagRelation")</li>
+                            <li>@Html.ActionLink("Jogos", "Index", "Game")</li>
                             <li>@Html.ActionLink("Estados", "Index", "State")</li>*@
                             <li>@Html.ActionLink("Introduções", "Index", "Introdution")</li>
+                            <li>@Html.ActionLink("Amigos", "Index", "RelationShip")</li>
                         </ul>
                     </nav>
                 </div>

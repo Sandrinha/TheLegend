@@ -186,71 +186,21 @@
     <Compile Include="Controllers\IntrodutionController.cs" />
     <Compile Include="Controllers\MissionController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\RelationShipController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\TagController.cs" />
+    <Compile Include="Controllers\TagRelationController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201312162248405_InitialCreate.cs" />
-    <Compile Include="Migrations\201312162248405_InitialCreate.Designer.cs">
-      <DependentUpon>201312162248405_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201312302252562_TagRelation.cs" />
+    <Compile Include="Migrations\201312302252562_TagRelation.Designer.cs">
+      <DependentUpon>201312302252562_TagRelation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201312162301260_use.cs" />
-    <Compile Include="Migrations\201312162301260_use.Designer.cs">
-      <DependentUpon>201312162301260_use.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312171848086_usertags.cs" />
-    <Compile Include="Migrations\201312171848086_usertags.Designer.cs">
-      <DependentUpon>201312171848086_usertags.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312171906013_usertags1.cs" />
-    <Compile Include="Migrations\201312171906013_usertags1.Designer.cs">
-      <DependentUpon>201312171906013_usertags1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312182232505_tagsusers.cs" />
-    <Compile Include="Migrations\201312182232505_tagsusers.Designer.cs">
-      <DependentUpon>201312182232505_tagsusers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312182318528_ask.cs" />
-    <Compile Include="Migrations\201312182318528_ask.Designer.cs">
-      <DependentUpon>201312182318528_ask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312191925220_ask1.cs" />
-    <Compile Include="Migrations\201312191925220_ask1.Designer.cs">
-      <DependentUpon>201312191925220_ask1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312191933487_ask11.cs" />
-    <Compile Include="Migrations\201312191933487_ask11.Designer.cs">
-      <DependentUpon>201312191933487_ask11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312230109569_AskFinal.cs" />
-    <Compile Include="Migrations\201312230109569_AskFinal.Designer.cs">
-      <DependentUpon>201312230109569_AskFinal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312232111575_humor.cs" />
-    <Compile Include="Migrations\201312232111575_humor.Designer.cs">
-      <DependentUpon>201312232111575_humor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312251155511_mission.cs" />
-    <Compile Include="Migrations\201312251155511_mission.Designer.cs">
-      <DependentUpon>201312251155511_mission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312252347598_game.cs" />
-    <Compile Include="Migrations\201312252347598_game.Designer.cs">
-      <DependentUpon>201312252347598_game.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312252359142_game_name.cs" />
-    <Compile Include="Migrations\201312252359142_game_name.Designer.cs">
-      <DependentUpon>201312252359142_game_name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312260010246_State.cs" />
-    <Compile Include="Migrations\201312260010246_State.Designer.cs">
-      <DependentUpon>201312260010246_State.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312260025086_introdution.cs" />
-    <Compile Include="Migrations\201312260025086_introdution.Designer.cs">
-      <DependentUpon>201312260025086_introdution.cs</DependentUpon>
+    <Compile Include="Migrations\201401022049115_TagRelation1.cs" />
+    <Compile Include="Migrations\201401022049115_TagRelation1.Designer.cs">
+      <DependentUpon>201401022049115_TagRelation1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -259,8 +209,10 @@
     <Compile Include="Models\Humor.cs" />
     <Compile Include="Models\Introdution.cs" />
     <Compile Include="Models\Mission.cs" />
+    <Compile Include="Models\RelationShip.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -419,60 +371,27 @@
     <Content Include="Views\Introdution\Create.cshtml" />
     <Content Include="Views\Introdution\Edit.cshtml" />
     <Content Include="Views\Introdution\Delete.cshtml" />
-    <Content Include="Views\Shared\_LanguageSelector.cshtml" />
+    <Content Include="Views\TagRelation\Index.cshtml" />
+    <Content Include="Views\TagRelation\Details.cshtml" />
+    <Content Include="Views\TagRelation\Create.cshtml" />
+    <Content Include="Views\TagRelation\Edit.cshtml" />
+    <Content Include="Views\TagRelation\Delete.cshtml" />
+    <Content Include="Views\RelationShip\Index.cshtml" />
+    <Content Include="Views\RelationShip\Details.cshtml" />
+    <Content Include="Views\RelationShip\Create.cshtml" />
+    <Content Include="Views\RelationShip\Edit.cshtml" />
+    <Content Include="Views\RelationShip\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_GlobalResources\" />
+    <EmbeddedResource Include="Migrations\201312302252562_TagRelation.resx">
+      <DependentUpon>201312302252562_TagRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401022049115_TagRelation1.resx">
+      <DependentUpon>201401022049115_TagRelation1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201312162248405_InitialCreate.resx">
-      <DependentUpon>201312162248405_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312162301260_use.resx">
-      <DependentUpon>201312162301260_use.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312171848086_usertags.resx">
-      <DependentUpon>201312171848086_usertags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312171906013_usertags1.resx">
-      <DependentUpon>201312171906013_usertags1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312182232505_tagsusers.resx">
-      <DependentUpon>201312182232505_tagsusers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312182318528_ask.resx">
-      <DependentUpon>201312182318528_ask.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312191925220_ask1.resx">
-      <DependentUpon>201312191925220_ask1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312191933487_ask11.resx">
-      <DependentUpon>201312191933487_ask11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312230109569_AskFinal.resx">
-      <DependentUpon>201312230109569_AskFinal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312232111575_humor.resx">
-      <DependentUpon>201312232111575_humor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312251155511_mission.resx">
-      <DependentUpon>201312251155511_mission.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312252347598_game.resx">
-      <DependentUpon>201312252347598_game.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312252359142_game_name.resx">
-      <DependentUpon>201312252359142_game_name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312260010246_State.resx">
-      <DependentUpon>201312260010246_State.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312260025086_introdution.resx">
-      <DependentUpon>201312260025086_introdution.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

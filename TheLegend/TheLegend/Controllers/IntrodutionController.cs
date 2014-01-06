@@ -93,6 +93,27 @@ namespace TheLegend.Controllers
             {
                 db.Entry(introdution).State = EntityState.Modified;
                 db.SaveChanges();
+                if (introdution.state.Name == "Aceite")
+                {
+                    RelationShip relationship = new RelationShip();
+                    relationship.UserId1 = introdution.UserOriginId;
+                    relationship.UserId2 = introdution.UserDestinId;
+                    relationship.TagRelationId = 1;
+                    relationship.Tag = db.TagRelations.Find(1);
+                    db.RelationShips.Add(relationship);
+                    db.SaveChanges();
+
+                    relationship.UserId2 = introdution.UserOriginId;
+                    relationship.UserId1 = introdution.UserDestinId;
+                    relationship.TagRelationId = 1;
+                    relationship.Tag = db.TagRelations.Find(1);
+                    db.RelationShips.Add(relationship);
+                    db.SaveChanges();
+
+                    db.Introdutions.Remove(introdution);
+
+                    return RedirectToAction("RelatioShip", "Index");
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.MissionId = new SelectList(db.Missions, "MissionId", "MissionId", introdution.MissionId);

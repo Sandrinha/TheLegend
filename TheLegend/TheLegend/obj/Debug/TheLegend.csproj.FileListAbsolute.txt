@@ -630,26 +630,10 @@ C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\ru\System.Spati
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.InitialCreate.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.use.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags1.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.tagsusers.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask1.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask11.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.humor.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.humor.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.mission.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.game.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.game_name.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.State.resources
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.introdution.resources
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.dll.config
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.dll
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.pdb
@@ -752,104 +736,6 @@ C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrat
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\TheLegend.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\TheLegend.pdb
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Antlr3.Runtime.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.AspNet.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.Core.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OAuth.Consumer.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OAuth.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OpenId.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\EntityFramework.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Data.Edm.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Data.OData.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Web.WebPages.OAuth.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Newtonsoft.Json.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Net.Http.Formatting.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Spatial.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Helpers.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Http.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Http.OData.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Http.WebHost.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Mvc.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Optimization.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Razor.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.WebPages.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.WebPages.Razor.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\WebGrease.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\WebMatrix.Data.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\WebMatrix.WebData.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Data.Edm.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Data.OData.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Spatial.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Http.OData.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\EntityFramework.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Newtonsoft.Json.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Net.Http.Formatting.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Helpers.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Http.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Http.WebHost.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Mvc.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.Razor.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.WebPages.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\System.Web.WebPages.Razor.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\WebMatrix.Data.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\Microsoft.Web.WebPages.OAuth.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\WebMatrix.WebData.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.AspNet.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.Core.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OAuth.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OpenId.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\de\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\es\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\fr\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\it\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ja\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ko\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ru\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\de\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\es\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\fr\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\it\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ja\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ko\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ru\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\zh-Hans\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\zh-Hant\Microsoft.Data.OData.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\de\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\es\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\fr\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\it\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ja\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ko\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\ru\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\zh-Hans\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.InitialCreate.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.use.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags1.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.tagsusers.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask1.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask11.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.humor.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.mission.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.game.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.game_name.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.State.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.introdution.resources
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
-C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.TagRelation.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.TagRelation1.resources
