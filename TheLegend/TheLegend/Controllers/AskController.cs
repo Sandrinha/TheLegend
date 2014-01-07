@@ -17,7 +17,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/
-
+        [Authorize]
         public ActionResult Index()
         {
 
@@ -26,7 +26,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
@@ -39,7 +39,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.UserAskId = new SelectList(db.UserProfiles, "UserId", "UserName");
@@ -68,7 +68,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
@@ -97,7 +97,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/Delete/5
-
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
