@@ -1,0 +1,54 @@
+﻿@model TheLegend.Models.RelationShip
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RelationShip</legend>
+
+        @Html.HiddenFor(model => model.RelationShipId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserId1)
+            @Html.ValidationMessageFor(model => model.UserId1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserId2)
+            @Html.ValidationMessageFor(model => model.UserId2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TagRelationId, "Tag")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TagRelationId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TagRelationId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

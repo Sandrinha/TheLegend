@@ -17,7 +17,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Tag/
-
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Tags.ToList());
@@ -25,7 +25,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Tag/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             Tag tag = db.Tags.Find(id);
@@ -38,7 +38,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Tag/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -68,7 +68,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Tag/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Tag tag = db.Tags.Find(id);
@@ -97,7 +97,7 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Tag/Delete/5
-
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Tag tag = db.Tags.Find(id);

@@ -1,0 +1,36 @@
+﻿@model TheLegend.Models.RelationShip
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>RelationShip</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tag.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tag.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.RelationShipId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
