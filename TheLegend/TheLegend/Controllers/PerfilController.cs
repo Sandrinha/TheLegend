@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheLegend.Filters;
 using TheLegend.Models;
+using WebMatrix.WebData;
 
 
 
@@ -45,6 +47,16 @@ namespace TheLegend.Controllers
                 return RedirectToAction("Index");
             }
             return View(user);
+        }
+         [InitializeSimpleMembership]
+        public ActionResult Eliminar(int id=0)
+        {
+           UserProfile user = bd.UserProfiles.Find(WebSecurity.GetUserId(User.Identity.Name));
+            Tag t = bd.Tags.Find(id);
+            user.Tags.Remove(t);
+            bd.SaveChanges();
+                return RedirectToAction("Index");
+           
         }
 
     }

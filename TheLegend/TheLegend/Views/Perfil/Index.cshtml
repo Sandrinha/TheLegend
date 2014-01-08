@@ -62,14 +62,19 @@
 
                     </th>
                     <td>
-                    @foreach (var tag in item.Tags.ToList())
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => tag.TagName)
-                            </td>
-                        </tr>
-                    }
+                        @foreach (var tag in item.Tags.ToList())
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => tag.TagName)
+                                
+                                </td>
+                                <td>
+                                        @Html.ActionLink("Eliminar", "Eliminar", new { id = tag.TagID })
+                                </td>
+                            </tr>
+                        }
+                    
                     </td>
                 </tr>
             }

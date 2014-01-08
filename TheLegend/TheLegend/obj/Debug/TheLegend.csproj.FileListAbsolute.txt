@@ -629,7 +629,6 @@ C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\ko\System.Spati
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\ru\System.Spatial.resources.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources

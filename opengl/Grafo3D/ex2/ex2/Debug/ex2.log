@@ -1,6 +1,8 @@
-﻿Build started 06/01/2014 22:31:16.
+﻿Build started 08/01/2014 22:14:22.
      1>Project "C:\Users\Filipe\Documents\isep\LAPR5\TheLegend\opengl\Grafo3D\ex2\ex2\ex2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\ex2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ex2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ex2.cpp
          ex2.cpp
      1>c:\users\filipe\documents\isep\lapr5\thelegend\opengl\grafo3d\ex2\ex2\ex2.cpp(755): warning C4101: 'Nhits' : unreferenced local variable
@@ -12,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.75
+Time Elapsed 00:00:02.12

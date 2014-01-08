@@ -20,19 +20,24 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Tag", "Index", "Tag")</li>
-                            <li>@Html.ActionLink("O Meu Perfil", "Index", "Perfil")</li>
-                            <li>@Html.ActionLink("Pedidos", "Index", "Ask")</li>
-                            @*<li>@Html.ActionLink("Humor", "Index", "Humor")</li>*@
-                            <li>@Html.ActionLink("Missião", "Index", "Mission")</li>
-                            @*<li>@Html.ActionLink("TagRelation", "Index", "TagRelation")</li>
-                            <li>@Html.ActionLink("Jogos", "Index", "Game")</li>
-                            <li>@Html.ActionLink("Estados", "Index", "State")</li>*@
-                            <li>@Html.ActionLink("Introduções", "Index", "Introdution")</li>
-                            <li>@Html.ActionLink("Amigos", "Index", "RelationShip")</li>
+                            @if (!User.Identity.IsAuthenticated) {
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Tag", "Index", "Tag")</li>
+                                <li>@Html.ActionLink("O Meu Perfil", "Index", "Perfil")</li>
+                                <li>@Html.ActionLink("Pedidos", "Index", "Ask")</li>
+                                @*<li>@Html.ActionLink("Humor", "Index", "Humor")</li>*@
+                                <li>@Html.ActionLink("Missião", "Index", "Mission")</li>
+                                @*<li>@Html.ActionLink("TagRelation", "Index", "TagRelation")</li>
+                                <li>@Html.ActionLink("Jogos", "Index", "Game")</li>
+                                <li>@Html.ActionLink("Estados", "Index", "State")</li>*@
+                                <li>@Html.ActionLink("Introduções", "Index", "Introdution")</li>
+                                <li>@Html.ActionLink("Amigos", "Index", "RelationShip")</li>
+                            }
                         </ul>
                     </nav>
                 </div>
