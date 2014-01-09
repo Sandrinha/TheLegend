@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201401022049115_TagRelation1.Designer.cs">
       <DependentUpon>201401022049115_TagRelation1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201401082206101_askUsers.cs" />
+    <Compile Include="Migrations\201401082206101_askUsers.Designer.cs">
+      <DependentUpon>201401082206101_askUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Ask.cs" />
@@ -212,7 +216,6 @@
     <Compile Include="Models\RelationShip.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\TagCloud.cs" />
     <Compile Include="Models\TagRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -334,11 +337,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Tag\Index.cshtml" />
-    <Content Include="Views\Tag\Details.cshtml" />
-    <Content Include="Views\Tag\Create.cshtml" />
-    <Content Include="Views\Tag\Edit.cshtml" />
-    <Content Include="Views\Tag\Delete.cshtml" />
     <Content Include="Views\Perfil\Index.cshtml" />
     <Content Include="Views\Perfil\Edit.cshtml" />
     <Content Include="Views\Perfil\MyTags.cshtml" />
@@ -389,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201401022049115_TagRelation1.resx">
       <DependentUpon>201401022049115_TagRelation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401082206101_askUsers.resx">
+      <DependentUpon>201401082206101_askUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

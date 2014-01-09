@@ -8,8 +8,29 @@
 
 <fieldset>
     <legend>Ask</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UserAsk.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserAsk.UserName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UserOrigin.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserOrigin.UserName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UserDestin.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserDestin.UserName)
+    </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.AskID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AskId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

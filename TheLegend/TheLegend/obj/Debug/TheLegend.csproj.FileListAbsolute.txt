@@ -738,3 +738,5 @@ C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.TagRelation.resources
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.TagRelation1.resources
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
+C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.askUsers.resources

@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TheLegend.Filters;
 using TheLegend.Models;
 using WebMatrix.WebData;
 
@@ -17,16 +16,16 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/
-        [Authorize]
+
         public ActionResult Index()
         {
-
-            return View(db.Asks.ToList());
+            var asks = db.Asks.Include(a => a.UserAsk).Include(a => a.UserOrigin).Include(a => a.UserDestin);
+            return View(asks.ToList());
         }
 
         //
         // GET: /Ask/Details/5
-        [Authorize]
+
         public ActionResult Details(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
@@ -39,10 +38,11 @@ namespace TheLegend.Controllers
 
         //
         // GET: /Ask/Create
-        [Authorize]
+
         public ActionResult Create()
         {
             ViewBag.UserAskId = new SelectList(db.UserProfiles, "UserId", "UserName");
+           // ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName");
             ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName");
             return View();
         }
@@ -52,10 +52,10 @@ namespace TheLegend.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [InitializeSimpleMembership]
         public ActionResult Create(Ask ask)
         {
             ask.UserOriginId = WebSecurity.GetUserId(User.Identity.Name);
+            ask.UserOrigin = db.UserProfiles.Find(ask.UserOriginId);
             if (ModelState.IsValid)
             {
                 db.Asks.Add(ask);
@@ -63,12 +63,15 @@ namespace TheLegend.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserAskId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserAskId);
+           // ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserOriginId);
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserDestinId);
             return View(ask);
         }
 
         //
         // GET: /Ask/Edit/5
-        [Authorize]
+
         public ActionResult Edit(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
@@ -76,6 +79,9 @@ namespace TheLegend.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserAskId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserAskId);
+            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserOriginId);
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserDestinId);
             return View(ask);
         }
 
@@ -92,12 +98,15 @@ namespace TheLegend.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserAskId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserAskId);
+            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserOriginId);
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", ask.UserDestinId);
             return View(ask);
         }
 
         //
         // GET: /Ask/Delete/5
-        [Authorize]
+
         public ActionResult Delete(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
@@ -121,11 +130,17 @@ namespace TheLegend.Controllers
             return RedirectToAction("Index");
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+
         public ActionResult Responder(int id = 0)
         {
             Ask ask = db.Asks.Find(id);
             Introdution introdution = new Introdution();
-            
+
             UserProfile user = db.UserProfiles.Find(ask.UserOriginId);
 
             Mission[] auxmisson = db.Missions.ToArray();
@@ -160,13 +175,7 @@ namespace TheLegend.Controllers
             db.Introdutions.Add(introdution);
             db.SaveChanges();
 
-            return RedirectToAction("Index","Introdution");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
+            return RedirectToAction("Index", "Introdution");
         }
     }
 }

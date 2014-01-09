@@ -15,20 +15,20 @@
         <legend>Ask</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserAskId, "UserAskId")
+        @Html.LabelFor(model => model.UserAskId, "Os Nossos Amigos")
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("UserAskId", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserAskId)
-        </div>
+    <div class="editor-field">
+        @Html.DropDownList("UserAskId", String.Empty)
+        @Html.ValidationMessageFor(model => model.UserAskId)
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserDestinId, "UserDestinId")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("UserDestinId", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserDestinId)
-        </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.UserDestinId, "Os Amigos Dele")
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("UserDestinId", String.Empty)
+        @Html.ValidationMessageFor(model => model.UserDestinId)
+    </div>
 
 
 

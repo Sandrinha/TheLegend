@@ -12,15 +12,15 @@
 <table>
     <tr>
         <p>
-            Os meus Pedidos Por Tratar
+            Os meus Pedidos
         </p>
     </tr>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserAskId)
+            @Html.DisplayName("A Quem Pedi")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserDestinId)
+            @Html.DisplayName("Chegar a")
         </th>
     </tr>
 
@@ -30,10 +30,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserAskId)
+                    @Html.DisplayFor(modelItem => item.UserAsk.UserName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserDestinId)
+                    @Html.DisplayFor(modelItem => item.UserDestin.UserName)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.AskId }) |
@@ -54,10 +54,10 @@
     </tr>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserOriginId)
+            @Html.DisplayName("Pedido feito por")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserDestinId)
+            @Html.DisplayName("Chegar a ")
         </th>
     </tr>
 
@@ -67,10 +67,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserOriginId)
+                    @Html.DisplayFor(modelItem => item.UserOrigin.UserName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserDestinId)
+                    @Html.DisplayFor(modelItem => item.UserDestin.UserName)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.AskId }) |

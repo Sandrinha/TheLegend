@@ -9,8 +9,30 @@
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
     <legend>Ask</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UserAsk.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserAsk.UserName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UserOrigin.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserOrigin.UserName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UserDestin.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserDestin.UserName)
+    </div>
 </fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete" /> |
