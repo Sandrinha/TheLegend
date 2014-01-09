@@ -18,7 +18,7 @@ namespace TheLegend.Controllers
 
         public ActionResult Index()
         {
-            var introdutions = db.Introdutions.Include(i => i.mission).Include(i => i.game).Include(i => i.state);
+            var introdutions = db.Introdutions.Include(i => i.mission).Include(i => i.UserOrigin).Include(i => i.UserDestin).Include(i => i.game).Include(i => i.state);
             return View(introdutions.ToList());
         }
 
@@ -41,6 +41,8 @@ namespace TheLegend.Controllers
         public ActionResult Create()
         {
             ViewBag.MissionId = new SelectList(db.Missions, "MissionId", "MissionId");
+            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName");
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName");
             ViewBag.GameId = new SelectList(db.Games, "GameId", "Name");
             ViewBag.StateId = new SelectList(db.States, "StateId", "Name");
             return View();
@@ -61,6 +63,8 @@ namespace TheLegend.Controllers
             }
 
             ViewBag.MissionId = new SelectList(db.Missions, "MissionId", "MissionId", introdution.MissionId);
+            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserOriginId);
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserDestinId);
             ViewBag.GameId = new SelectList(db.Games, "GameId", "Name", introdution.GameId);
             ViewBag.StateId = new SelectList(db.States, "StateId", "Name", introdution.StateId);
             return View(introdution);
@@ -77,6 +81,8 @@ namespace TheLegend.Controllers
                 return HttpNotFound();
             }
             ViewBag.MissionId = new SelectList(db.Missions, "MissionId", "MissionId", introdution.MissionId);
+            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserOriginId);
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserDestinId);
             ViewBag.GameId = new SelectList(db.Games, "GameId", "Name", introdution.GameId);
             ViewBag.StateId = new SelectList(db.States, "StateId", "Name", introdution.StateId);
             return View(introdution);
@@ -93,30 +99,11 @@ namespace TheLegend.Controllers
             {
                 db.Entry(introdution).State = EntityState.Modified;
                 db.SaveChanges();
-                if (introdution.state.Name == "Aceite")
-                {
-                    RelationShip relationship = new RelationShip();
-                    relationship.UserId1 = introdution.UserOriginId;
-                    relationship.UserId2 = introdution.UserDestinId;
-                    relationship.TagRelationId = 1;
-                    relationship.Tag = db.TagRelations.Find(1);
-                    db.RelationShips.Add(relationship);
-                    db.SaveChanges();
-
-                    relationship.UserId2 = introdution.UserOriginId;
-                    relationship.UserId1 = introdution.UserDestinId;
-                    relationship.TagRelationId = 1;
-                    relationship.Tag = db.TagRelations.Find(1);
-                    db.RelationShips.Add(relationship);
-                    db.SaveChanges();
-
-                    db.Introdutions.Remove(introdution);
-
-                    return RedirectToAction("RelatioShip", "Index");
-                }
                 return RedirectToAction("Index");
             }
             ViewBag.MissionId = new SelectList(db.Missions, "MissionId", "MissionId", introdution.MissionId);
+            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserOriginId);
+            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserDestinId);
             ViewBag.GameId = new SelectList(db.Games, "GameId", "Name", introdution.GameId);
             ViewBag.StateId = new SelectList(db.States, "StateId", "Name", introdution.StateId);
             return View(introdution);

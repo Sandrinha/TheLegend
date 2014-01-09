@@ -11,38 +11,32 @@
 </p>
 <table>
     <tr>
+        <td>
+            <b>Introduções Recebidas</b>
+        </td>
+    </tr>
+    <tr>
         <th>
-            @Html.DisplayNameFor(model => model.mission.MissionId)
+            @Html.DisplayName("Quem Pediu")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserOriginId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserDestinId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.game.Name)
+            @Html.DisplayName("Jogo Atribuido")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GameResult)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.state.Name)
+            @Html.DisplayName("Estado")
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-   if(item.UserDestinId== WebSecurity.GetUserId(User.Identity.Name)){
+    
+    if(item.UserDestinId== WebSecurity.GetUserId(User.Identity.Name)){
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.mission.MissionId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserOriginId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserDestinId)
+            @Html.DisplayFor(modelItem => item.UserOrigin.UserName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.game.Name)
@@ -55,11 +49,65 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IntrodutionId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IntrodutionId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IntrodutionId })
+            @Html.ActionLink("Details", "Details", new { id=item.IntrodutionId }) 
         </td>
     </tr>
-    }
 }
+}
+
+</table>
+
+<table>
+    <tr>
+        <td>
+            <b>Estado das minhas introduções</b>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mission.MissionId)
+        </th>
+        <th>
+            @Html.DisplayName("Chegar a")
+        </th>
+        <th>
+            @Html.DisplayName("Jogo Atribuido")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameResult)
+        </th>
+        <th>
+            @Html.DisplayName("Estado")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.UserOriginId == WebSecurity.GetUserId(User.Identity.Name))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mission.MissionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserDestin.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.game.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameResult)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.IntrodutionId }) 
+                </td>
+            </tr>
+        }
+    }
 
 </table>

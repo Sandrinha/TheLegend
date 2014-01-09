@@ -14,11 +14,11 @@
         <legend>Mission</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TargetUser)
+            @Html.LabelFor(model => model.TargetUserId, "TargetUser")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TargetUser)
-            @Html.ValidationMessageFor(model => model.TargetUser)
+            @Html.DropDownList("TargetUserId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TargetUserId)
         </div>
 
         <div class="editor-label">

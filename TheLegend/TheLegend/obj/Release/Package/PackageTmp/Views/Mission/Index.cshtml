@@ -12,7 +12,7 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TargetUser)
+            @Html.DisplayNameFor(model => model.TargetUser.UserName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsComplete)
@@ -24,10 +24,10 @@
     </tr>
 
 @foreach (var item in Model) {
-    if (item.UserId == WebSecurity.GetUserId(User.Identity.Name)) { 
+    if (item.UserId == WebSecurity.GetUserId(User.Identity.Name)) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TargetUser)
+            @Html.DisplayFor(modelItem => item.TargetUser.UserName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsComplete)

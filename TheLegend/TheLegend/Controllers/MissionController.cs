@@ -14,16 +14,16 @@ namespace TheLegend.Controllers
         private UsersContext db = new UsersContext();
 
         //
-        // GET: /Misson/
+        // GET: /Mission/
 
         public ActionResult Index()
         {
-            var missions = db.Missions.Include(m => m.User);
+            var missions = db.Missions.Include(m => m.TargetUser).Include(m => m.User);
             return View(missions.ToList());
         }
 
         //
-        // GET: /Misson/Details/5
+        // GET: /Mission/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -36,16 +36,17 @@ namespace TheLegend.Controllers
         }
 
         //
-        // GET: /Misson/Create
+        // GET: /Mission/Create
 
         public ActionResult Create()
         {
+            ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName");
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName");
             return View();
         }
 
         //
-        // POST: /Misson/Create
+        // POST: /Mission/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -58,12 +59,13 @@ namespace TheLegend.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.TargetUserId);
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserId);
             return View(mission);
         }
 
         //
-        // GET: /Misson/Edit/5
+        // GET: /Mission/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -72,12 +74,13 @@ namespace TheLegend.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.TargetUserId);
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserId);
             return View(mission);
         }
 
         //
-        // POST: /Misson/Edit/5
+        // POST: /Mission/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,12 +92,13 @@ namespace TheLegend.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.TargetUserId);
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserId);
             return View(mission);
         }
 
         //
-        // GET: /Misson/Delete/5
+        // GET: /Mission/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -107,7 +111,7 @@ namespace TheLegend.Controllers
         }
 
         //
-        // POST: /Misson/Delete/5
+        // POST: /Mission/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

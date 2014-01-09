@@ -141,15 +141,18 @@ namespace TheLegend.Controllers
             Ask ask = db.Asks.Find(id);
             Introdution introdution = new Introdution();
 
+            //User que Originou o pedido
             UserProfile user = db.UserProfiles.Find(ask.UserOriginId);
 
+
+            //Procurar na lista de missions a missom que esta activa para o User que Originou o pedido
             Mission[] auxmisson = db.Missions.ToArray();
 
             Mission mission = new Mission();
 
             for (int i = 0; i < auxmisson.Length; i++)
             {
-                if (auxmisson[i].UserId == WebSecurity.GetUserId(User.Identity.Name))
+                if (auxmisson[i].UserId == ask.UserOriginId)
                 {
                     if (!auxmisson[i].IsComplete)
                     {
@@ -158,11 +161,13 @@ namespace TheLegend.Controllers
                 }
             }
 
-
+            //Preencher a Introdution
             introdution.MissionId = mission.MissionId;
             introdution.mission = mission;
             introdution.UserOriginId = ask.UserOriginId;
+            introdution.UserOrigin = db.UserProfiles.Find(ask.UserOriginId);
             introdution.UserDestinId = ask.UserDestinId;
+            introdution.UserDestin = db.UserProfiles.Find(ask.UserDestinId);
             introdution.StateId = 1;
             introdution.state = db.States.Find(1);
             introdution.GameId = 4;

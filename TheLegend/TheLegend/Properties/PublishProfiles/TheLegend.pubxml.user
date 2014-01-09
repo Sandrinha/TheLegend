@@ -157,7 +157,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2014 21:38:41</publishTime>
     </File>
     <File Include="bin/TheLegend.dll">
-      <publishTime>01/09/2014 18:54:20</publishTime>
+      <publishTime>01/09/2014 21:42:31</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/06/2014 21:38:56</publishTime>
@@ -481,7 +481,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2014 21:38:10</publishTime>
     </File>
     <File Include="Views/Ask/Index.cshtml">
-      <publishTime>01/09/2014 18:50:57</publishTime>
+      <publishTime>01/09/2014 21:53:58</publishTime>
     </File>
     <File Include="Views/Game/Create.cshtml">
       <publishTime>01/06/2014 21:38:10</publishTime>
@@ -523,34 +523,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2014 21:38:10</publishTime>
     </File>
     <File Include="Views/Introdution/Create.cshtml">
-      <publishTime>01/06/2014 21:38:10</publishTime>
+      <publishTime>01/09/2014 19:32:38</publishTime>
     </File>
     <File Include="Views/Introdution/Delete.cshtml">
-      <publishTime>01/06/2014 21:38:10</publishTime>
+      <publishTime>01/09/2014 19:32:45</publishTime>
     </File>
     <File Include="Views/Introdution/Details.cshtml">
-      <publishTime>01/06/2014 21:38:10</publishTime>
+      <publishTime>01/09/2014 19:32:33</publishTime>
     </File>
     <File Include="Views/Introdution/Edit.cshtml">
-      <publishTime>01/06/2014 21:38:10</publishTime>
+      <publishTime>01/09/2014 19:32:41</publishTime>
     </File>
     <File Include="Views/Introdution/Index.cshtml">
-      <publishTime>01/06/2014 21:38:10</publishTime>
+      <publishTime>01/09/2014 22:01:07</publishTime>
     </File>
     <File Include="Views/Mission/Create.cshtml">
-      <publishTime>01/06/2014 21:38:11</publishTime>
+      <publishTime>01/09/2014 20:48:03</publishTime>
     </File>
     <File Include="Views/Mission/Delete.cshtml">
-      <publishTime>01/06/2014 21:38:11</publishTime>
+      <publishTime>01/09/2014 20:48:11</publishTime>
     </File>
     <File Include="Views/Mission/Details.cshtml">
-      <publishTime>01/06/2014 21:38:11</publishTime>
+      <publishTime>01/09/2014 20:48:01</publishTime>
     </File>
     <File Include="Views/Mission/Edit.cshtml">
-      <publishTime>01/06/2014 21:38:11</publishTime>
+      <publishTime>01/09/2014 20:48:07</publishTime>
     </File>
     <File Include="Views/Mission/Index.cshtml">
-      <publishTime>01/06/2014 21:38:11</publishTime>
+      <publishTime>01/09/2014 20:58:25</publishTime>
     </File>
     <File Include="Views/Perfil/Edit.cshtml">
       <publishTime>01/06/2014 21:38:11</publishTime>
