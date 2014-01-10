@@ -99,11 +99,40 @@ namespace TheLegend.Controllers
             {
                 db.Entry(introdution).State = EntityState.Modified;
                 db.SaveChanges();
+                if (introdution.state.Name == "Aceite")
+                {
+                    RelationShip relationship = new RelationShip();
+                    //Adicinar os utilizadores a relação
+                    relationship.UserId1 = introdution.UserOriginId;
+                    relationship.User1 = db.UserProfiles.Find(relationship.UserId1);
+                    relationship.UserId2 = introdution.UserDestinId;
+                    relationship.User2 = db.UserProfiles.Find(relationship.UserId2);
+                    //Por definição ficam como conhecidos
+                    relationship.TagRelationId = 1;
+                    relationship.Tag = db.TagRelations.Find(1);
+                    db.RelationShips.Add(relationship);
+                    db.SaveChanges();
+
+                    //Trocar as relações
+                    relationship.UserId2 = introdution.UserOriginId;
+                    relationship.User2 = db.UserProfiles.Find(relationship.UserId2);
+                    relationship.UserId1 = introdution.UserDestinId;
+                    relationship.User1 = db.UserProfiles.Find(relationship.UserId1);
+
+                    //Por definição ficam como conhecidos
+                    relationship.TagRelationId = 1;
+                    relationship.Tag = db.TagRelations.Find(1);
+                    db.RelationShips.Add(relationship);
+                    db.SaveChanges();
+
+                    db.Introdutions.Remove(introdution);
+
+                    return RedirectToAction("RelatioShip", "Index");
+                }
+                
                 return RedirectToAction("Index");
             }
             ViewBag.MissionId = new SelectList(db.Missions, "MissionId", "MissionId", introdution.MissionId);
-            ViewBag.UserOriginId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserOriginId);
-            ViewBag.UserDestinId = new SelectList(db.UserProfiles, "UserId", "UserName", introdution.UserDestinId);
             ViewBag.GameId = new SelectList(db.Games, "GameId", "Name", introdution.GameId);
             ViewBag.StateId = new SelectList(db.States, "StateId", "Name", introdution.StateId);
             return View(introdution);

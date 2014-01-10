@@ -152,7 +152,7 @@ namespace TheLegend.Controllers
 
             for (int i = 0; i < auxmisson.Length; i++)
             {
-                if (auxmisson[i].UserId == ask.UserOriginId)
+                if (auxmisson[i].UserMissionId == ask.UserOriginId)
                 {
                     if (!auxmisson[i].IsComplete)
                     {

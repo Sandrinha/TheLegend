@@ -18,7 +18,7 @@ namespace TheLegend.Controllers
 
         public ActionResult Index()
         {
-            var missions = db.Missions.Include(m => m.TargetUser).Include(m => m.User);
+            var missions = db.Missions.Include(m => m.TargetUser).Include(m => m.UserMission);
             return View(missions.ToList());
         }
 
@@ -60,7 +60,7 @@ namespace TheLegend.Controllers
             }
 
             ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.TargetUserId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserId);
+            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserMissionId);
             return View(mission);
         }
 
@@ -75,7 +75,7 @@ namespace TheLegend.Controllers
                 return HttpNotFound();
             }
             ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.TargetUserId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserId);
+            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserMissionId);
             return View(mission);
         }
 
@@ -93,7 +93,7 @@ namespace TheLegend.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.TargetUserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.TargetUserId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserId);
+            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", mission.UserMissionId);
             return View(mission);
         }
 

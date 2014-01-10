@@ -22,18 +22,18 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserOriginId, "UserOrigin")
+            @Html.LabelFor(model => model.UserOriginId)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("UserOriginId", String.Empty)
+            @Html.EditorFor(model => model.UserOriginId)
             @Html.ValidationMessageFor(model => model.UserOriginId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserDestinId, "UserDestin")
+            @Html.LabelFor(model => model.UserDestinId)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("UserDestinId", String.Empty)
+            @Html.EditorFor(model => model.UserDestinId)
             @Html.ValidationMessageFor(model => model.UserDestinId)
         </div>
 

@@ -11,35 +11,30 @@
 </p>
 <table>
     <tr>
+
         <th>
-            @Html.DisplayNameFor(model => model.UserId1)
+            @Html.DisplayNameFor(model => model.User2.UserName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tag.Name)
+            @Html.DisplayName("Tipe de Relação")
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    if(item.UserId1==WebSecurity.GetUserId(User.Identity.Name)){
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId2)
+            @Html.DisplayFor(modelItem => item.User2.UserName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tag.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RelationShipId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RelationShipId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RelationShipId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.RelationShipId })
         </td>
     </tr>
+    }
 }
 
 </table>

@@ -15,9 +15,9 @@ namespace TheLegend.Models
         public int TargetUserId{ get; set; }
         public virtual UserProfile TargetUser { get; set; }
         public bool IsComplete { get; set; }
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public virtual UserProfile User { get; set; }
+        [ForeignKey("UserMission")]
+        public int UserMissionId { get; set; }
+        public virtual UserProfile UserMission { get; set; }
 
         public virtual ICollection<Introdution> introdutions { get; set; }
     }
