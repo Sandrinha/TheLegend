@@ -220,6 +220,7 @@
     <Compile Include="Models\RelationShip.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagCould.cs" />
     <Compile Include="Models\TagRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

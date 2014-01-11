@@ -54,6 +54,7 @@ namespace TheLegend.Controllers
            UserProfile user = bd.UserProfiles.Find(WebSecurity.GetUserId(User.Identity.Name));
             Tag t = bd.Tags.Find(id);
             user.Tags.Remove(t);
+            t.count--;
             bd.SaveChanges();
                 return RedirectToAction("Index");
            

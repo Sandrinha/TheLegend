@@ -58,6 +58,7 @@ namespace TheLegend.Controllers
                 db.SaveChanges();
                 int iduser = WebSecurity.GetUserId(User.Identity.Name);
                 UserProfile u = db.UserProfiles.Find(iduser);
+                tag.count++;
                 u.Tags.Add(tag);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -133,6 +134,7 @@ namespace TheLegend.Controllers
             Tag tag = db.Tags.Find(id);
             int userid = WebSecurity.GetUserId(User.Identity.Name);
             UserProfile user = db.UserProfiles.Find(userid);
+            tag.count++;
             user.Tags.Add(tag);
             db.SaveChanges();
 

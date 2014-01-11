@@ -11,6 +11,8 @@ namespace TheLegend.Models
         public string Name {get;set;}
         public int Force { get; set; }
 
+        public int count { get; set; }
+
         public virtual ICollection<RelationShip> TagRelations { get; set; }
     }
 }
