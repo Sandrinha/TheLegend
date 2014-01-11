@@ -236,7 +236,6 @@
     <Compile Include="Models\RelationShip.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\TagCould.cs" />
     <Compile Include="Models\TagRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -401,6 +400,11 @@
     <Content Include="Views\RelationShip\Create.cshtml" />
     <Content Include="Views\RelationShip\Edit.cshtml" />
     <Content Include="Views\RelationShip\Delete.cshtml" />
+    <Content Include="Views\Tag\Create.cshtml" />
+    <Content Include="Views\Tag\Delete.cshtml" />
+    <Content Include="Views\Tag\Details.cshtml" />
+    <Content Include="Views\Tag\Edit.cshtml" />
+    <Content Include="Views\Tag\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201312302252562_TagRelation.resx">
@@ -430,6 +434,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

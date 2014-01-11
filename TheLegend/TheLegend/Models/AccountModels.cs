@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
-using System.Linq;
 using System.Web.Security;
 
 namespace TheLegend.Models
@@ -35,9 +34,6 @@ namespace TheLegend.Models
         public DbSet<TagRelation> TagRelations { get; set; }
 
         public DbSet<RelationShip> RelationShips { get; set; }
-
-
-        
     }
 
     [Table("UserProfile")]
