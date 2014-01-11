@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
+using System.Linq;
 using System.Web.Security;
 
 namespace TheLegend.Models
@@ -34,6 +35,54 @@ namespace TheLegend.Models
         public DbSet<TagRelation> TagRelations { get; set; }
 
         public DbSet<RelationShip> RelationShips { get; set; }
+
+        private IQueryable<UserProfile> ListTagCloud()
+        {
+            var query = from e in UserProfiles
+                        select e;
+                        
+            return query;
+        }
+        public TagCloud GetTagCloud()
+        {
+            var tagCloud = new TagCloud();
+            tagCloud.EventsCount = ListTagCloud().Count();
+            var query = from t in Tags
+                        where t.User.Count() > 0
+                        orderby t.TagName
+                        select new MenuTag
+                        {
+                            Tag = t.TagName,
+                            Count = t.User.Count()
+                        };
+            tagCloud.MenuTags = query.ToList();
+            return tagCloud;
+        }
+
+        private IQueryable<RelationShip> ListTagRelationCloud()
+        {
+            var query = from e in RelationShips
+                        select e;
+
+            return query;
+        }
+        public TagCloud GetTagRelationCloud()
+        {
+            var tagCloud = new TagCloud();
+            tagCloud.EventsCount = ListTagRelationCloud().Count();
+            var query = from t in TagRelations
+                        where t.TagRelations.Count() > 0
+                        orderby t.Name
+                        select new MenuTag
+                        {
+                            Tag = t.Name,
+                            Count = t.TagRelations.Count()
+                        };
+            tagCloud.MenuTags = query.ToList();
+            return tagCloud;
+        }
+
+           
     }
 
     [Table("UserProfile")]

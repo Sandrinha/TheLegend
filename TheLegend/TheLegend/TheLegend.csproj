@@ -194,6 +194,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlExtensions.cs" />
     <Compile Include="Migrations\201312302252562_TagRelation.cs" />
     <Compile Include="Migrations\201312302252562_TagRelation.Designer.cs">
       <DependentUpon>201312302252562_TagRelation.cs</DependentUpon>
@@ -232,10 +233,12 @@
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Humor.cs" />
     <Compile Include="Models\Introdution.cs" />
+    <Compile Include="Models\MenuTag.cs" />
     <Compile Include="Models\Mission.cs" />
     <Compile Include="Models\RelationShip.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagCloud.cs" />
     <Compile Include="Models\TagRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

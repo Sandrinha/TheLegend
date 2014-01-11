@@ -452,11 +452,6 @@ C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.
 C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
 C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.tagsusers.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.InitialCreate.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.use.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.usertags1.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.tagsusers.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
@@ -543,9 +538,6 @@ C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\ko\System.Spatial.r
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\ru\System.Spatial.resources.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask1.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.ask11.resources
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.pdb
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\Antlr3.Runtime.dll
@@ -630,8 +622,6 @@ C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hans\System.
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.AskFinal.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.humor.resources
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.dll.config
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.dll
 C:\Users\Miguel\Desktop\TheLegend\TheLegend\TheLegend\bin\TheLegend.pdb
@@ -839,3 +829,11 @@ C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.Mission_Users.resources
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionTargetUser.resources
 C:\Users\Miguel Mendes\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionUsersUpdate.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.TagRelation.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.TagRelation1.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.askUsers.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionUser.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.RelationShipUser.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.Mission_Users.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionTargetUser.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionUsersUpdate.resources
