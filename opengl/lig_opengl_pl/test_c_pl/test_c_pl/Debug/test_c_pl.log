@@ -1,0 +1,17 @@
+﻿Build started 09/01/2014 22:29:56.
+     1>Project "C:\Users\Filipe\Documents\isep\LAPR5\myCopy\test_c_pl\test_c_pl\test_c_pl\test_c_pl.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\test_c_pl.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\test_c_pl.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt test_c_pl.cpp
+         test_c_pl.cpp
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Filipe\Documents\isep\LAPR5\myCopy\test_c_pl\test_c_pl\Debug\test_c_pl.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Program Files\swipl\lib" libswipl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Filipe\Documents\isep\LAPR5\myCopy\test_c_pl\test_c_pl\Debug\test_c_pl.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Filipe\Documents\isep\LAPR5\myCopy\test_c_pl\test_c_pl\Debug\test_c_pl.lib" /MACHINE:X86 Debug\stdafx.obj
+         Debug\test_c_pl.obj
+     1>LINK : warning LNK4067: ambiguous entry point; selected 'mainCRTStartup'
+     1>libswipl.lib(libswipl.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'X86'
+     1>Done Building Project "C:\Users\Filipe\Documents\isep\LAPR5\myCopy\test_c_pl\test_c_pl\test_c_pl\test_c_pl.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.54
