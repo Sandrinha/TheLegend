@@ -280,3 +280,7 @@ C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\Th
 C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.dll
 C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.pdb
 C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.Migrations.MissionUser.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.Migrations.RelationShipUser.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.Migrations.Mission_Users.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.Migrations.MissionTargetUser.resources
+C:\Users\Miguel Mendes\Desktop\Nova pasta (3)\TheLegend\TheLegend\obj\Release\TheLegend.Migrations.MissionUsersUpdate.resources

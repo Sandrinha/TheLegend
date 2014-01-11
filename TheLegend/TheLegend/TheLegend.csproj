@@ -210,6 +210,22 @@
     <Compile Include="Migrations\201401092140018_MissionUser.Designer.cs">
       <DependentUpon>201401092140018_MissionUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201401092245198_RelationShipUser.cs" />
+    <Compile Include="Migrations\201401092245198_RelationShipUser.Designer.cs">
+      <DependentUpon>201401092245198_RelationShipUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401102057545_Mission_Users.cs" />
+    <Compile Include="Migrations\201401102057545_Mission_Users.Designer.cs">
+      <DependentUpon>201401102057545_Mission_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401102105310_MissionTargetUser.cs" />
+    <Compile Include="Migrations\201401102105310_MissionTargetUser.Designer.cs">
+      <DependentUpon>201401102105310_MissionTargetUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401102117511_MissionUsersUpdate.cs" />
+    <Compile Include="Migrations\201401102117511_MissionUsersUpdate.Designer.cs">
+      <DependentUpon>201401102117511_MissionUsersUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Ask.cs" />
@@ -370,11 +386,6 @@
     <Content Include="Views\TagRelation\Create.cshtml" />
     <Content Include="Views\TagRelation\Edit.cshtml" />
     <Content Include="Views\TagRelation\Delete.cshtml" />
-    <Content Include="Views\RelationShip\Index.cshtml" />
-    <Content Include="Views\RelationShip\Details.cshtml" />
-    <Content Include="Views\RelationShip\Create.cshtml" />
-    <Content Include="Views\RelationShip\Edit.cshtml" />
-    <Content Include="Views\RelationShip\Delete.cshtml" />
     <Content Include="Views\Introdution\Index.cshtml" />
     <Content Include="Views\Introdution\Details.cshtml" />
     <Content Include="Views\Introdution\Create.cshtml" />
@@ -385,6 +396,11 @@
     <Content Include="Views\Mission\Create.cshtml" />
     <Content Include="Views\Mission\Edit.cshtml" />
     <Content Include="Views\Mission\Delete.cshtml" />
+    <Content Include="Views\RelationShip\Index.cshtml" />
+    <Content Include="Views\RelationShip\Details.cshtml" />
+    <Content Include="Views\RelationShip\Create.cshtml" />
+    <Content Include="Views\RelationShip\Edit.cshtml" />
+    <Content Include="Views\RelationShip\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201312302252562_TagRelation.resx">
@@ -398,6 +414,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201401092140018_MissionUser.resx">
       <DependentUpon>201401092140018_MissionUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401092245198_RelationShipUser.resx">
+      <DependentUpon>201401092245198_RelationShipUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401102057545_Mission_Users.resx">
+      <DependentUpon>201401102057545_Mission_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401102105310_MissionTargetUser.resx">
+      <DependentUpon>201401102105310_MissionTargetUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401102117511_MissionUsersUpdate.resx">
+      <DependentUpon>201401102117511_MissionUsersUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

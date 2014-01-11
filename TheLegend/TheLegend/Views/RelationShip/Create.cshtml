@@ -13,34 +13,34 @@
     <fieldset>
         <legend>RelationShip</legend>
 
-                <div class="editor-label">
-            @Html.LabelFor(model => model.UserId1, "UserId1")
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId1, "User1")
         </div>
         <div class="editor-field">
             @Html.DropDownList("UserId1", String.Empty)
             @Html.ValidationMessageFor(model => model.UserId1)
-            </div>
+        </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserId2, "UserId2")
+            @Html.LabelFor(model => model.UserId2, "User2")
         </div>
         <div class="editor-field">
             @Html.DropDownList("UserId2", String.Empty)
             @Html.ValidationMessageFor(model => model.UserId2)
         </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.TagRelationId, "Tag")
-            </div>
-            <div class="editor-field">
-                @Html.DropDownList("TagRelationId", String.Empty)
-                @Html.ValidationMessageFor(model => model.TagRelationId)
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TagRelationId, "Tag")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TagRelationId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TagRelationId)
+        </div>
 
-            <p>
-                <input type="submit" value="Create" />
-            </p>
-</fieldset>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
 }
 
 <div>

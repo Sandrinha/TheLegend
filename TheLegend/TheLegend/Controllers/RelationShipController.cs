@@ -18,8 +18,7 @@ namespace TheLegend.Controllers
 
         public ActionResult Index()
         {
-            var relationships = db.RelationShips.Include(r => r.Tag);
-            
+            var relationships = db.RelationShips.Include(r => r.User1).Include(r => r.User2).Include(r => r.Tag);
             return View(relationships.ToList());
         }
 
@@ -41,9 +40,9 @@ namespace TheLegend.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.TagRelationId = new SelectList(db.TagRelations, "TagRelationId", "Name");
             ViewBag.UserId1 = new SelectList(db.UserProfiles, "UserId", "UserName");
             ViewBag.UserId2 = new SelectList(db.UserProfiles, "UserId", "UserName");
+            ViewBag.TagRelationId = new SelectList(db.TagRelations, "TagRelationId", "Name");
             return View();
         }
 
@@ -61,6 +60,8 @@ namespace TheLegend.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserId1 = new SelectList(db.UserProfiles, "UserId", "UserName", relationship.UserId1);
+            ViewBag.UserId2 = new SelectList(db.UserProfiles, "UserId", "UserName", relationship.UserId2);
             ViewBag.TagRelationId = new SelectList(db.TagRelations, "TagRelationId", "Name", relationship.TagRelationId);
             return View(relationship);
         }
@@ -75,6 +76,8 @@ namespace TheLegend.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserId1 = new SelectList(db.UserProfiles, "UserId", "UserName", relationship.UserId1);
+            ViewBag.UserId2 = new SelectList(db.UserProfiles, "UserId", "UserName", relationship.UserId2);
             ViewBag.TagRelationId = new SelectList(db.TagRelations, "TagRelationId", "Name", relationship.TagRelationId);
             return View(relationship);
         }
@@ -92,6 +95,8 @@ namespace TheLegend.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserId1 = new SelectList(db.UserProfiles, "UserId", "UserName", relationship.UserId1);
+            ViewBag.UserId2 = new SelectList(db.UserProfiles, "UserId", "UserName", relationship.UserId2);
             ViewBag.TagRelationId = new SelectList(db.TagRelations, "TagRelationId", "Name", relationship.TagRelationId);
             return View(relationship);
         }

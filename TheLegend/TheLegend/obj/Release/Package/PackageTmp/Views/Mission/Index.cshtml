@@ -10,7 +10,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
-    <tr>
+    <tr >
         <th>
             @Html.DisplayNameFor(model => model.TargetUser.UserName)
         </th>
@@ -18,13 +18,13 @@
             @Html.DisplayNameFor(model => model.IsComplete)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.UserName)
+            @Html.DisplayNameFor(model => model.UserMission.UserName)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    if (item.UserId == WebSecurity.GetUserId(User.Identity.Name)) {
+    if (item.UserMissionId == WebSecurity.GetUserId(User.Identity.Name)) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.TargetUser.UserName)
@@ -33,7 +33,7 @@
             @Html.DisplayFor(modelItem => item.IsComplete)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.User.UserName)
+            @Html.DisplayFor(modelItem => item.UserMission.UserName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MissionId }) |
