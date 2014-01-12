@@ -137,7 +137,7 @@ listar_amigos/2:
 cria uma lista com todos os amigos do 1º argumento e guarda-a na lista do 2º argumento
 ******************/
 
-listar_amigos(X,Lamigos):-carrega_conn(L),
+listar_amigos(X,Lamigos):-init_bd,carrega_conn(L),
 		findall(User,(member((_,X,User,_),L);member((_,User,X,_),L)),Lamigos).
 
 /******************
@@ -192,8 +192,8 @@ guarda os amigos do 1º argumento com N tags em comum na lista do 3º argumento se
 ******************/
 
 amigosTagComum(User,N,LF):-
-			listaTagsUser(User,LTagsUser),
 			listar_amigos(User,Lamigos),
+			listaTagsUser(User,LTagsUser),
 			verifica_comum(User,N,LTagsUser,Lamigos,LF).
 			
 
