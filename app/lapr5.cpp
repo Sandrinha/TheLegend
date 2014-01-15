@@ -169,6 +169,13 @@ void imprime_ajuda(void)
   printf("F1  - Grava grafo do ficheiro \n");
   printf("F2  - Lê grafo para ficheiro \n");
   printf("F6  - Cria novo grafo\n");
+  printf("******* Voo Livre ******* \n");
+  printf("seta para cima - Avançar\n");
+  printf("seta para baixo - Recuar \n");
+  printf("seta para direita - Rodar para a direita\n");
+  printf("seta para esquerda - Rodar para a esquerda \n");
+  printf("q,Q - Subir \n");
+  printf("a,A - Descer \n");
   printf("******* Camera ******* \n");
   printf("Botão esquerdo - Arrastar os eixos (centro da camera)\n");
   printf("Botão direito  - Rodar camera\n");
@@ -763,7 +770,17 @@ void keyboard(unsigned char key, int x, int y)
 				initEstado();
 				initModelo();
 				glutPostRedisplay();
-			break;    
+			break;
+		case 'Q':
+		case 'q':
+				estado.camera.center[2]+=1;
+				glutPostRedisplay();
+			break;
+		case 'A':
+		case 'a':
+				estado.camera.center[2]-=1;
+				glutPostRedisplay();
+			break;
 	}
 }
 
@@ -805,11 +822,11 @@ void Special(int key, int x, int y){
 				glutPostRedisplay();
 			break;	
 		case GLUT_KEY_LEFT:
-			estado.camera.center[0]-=1;
+				estado.camera.dir_long+=.1;
 				glutPostRedisplay();
 			break; 
 		case GLUT_KEY_RIGHT:
-			estado.camera.center[0]+=1;
+				estado.camera.dir_long-=.1;
 				glutPostRedisplay();
 			break;  }
 }
