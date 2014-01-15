@@ -3,29 +3,19 @@
 }
 @section featured {
     <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
-        </div>
+      
     </section>
 }
-<h3>TagCloud</h3>
-<ol class="round">
-    <div style="float:left">
-       @Html.Raw(Html.TagCloud())
-    </div>
-        <div style="float:right">
-            @Html.Raw(Html.TagRelationCloud())
+
+<body>
+    <h3 style="text-align: right; color: #00BFFF; font-size:x-large">TagCloud</h3>
+    
+        <div style="float: right; width: 50px; color:lightcyan;">
+            @Html.Raw(Html.TagCloud())
         </div>
-  
-       
-</ol>
+        <div style="float: right; width: 125px; color:lightcyan">
+            @Html.Raw(Html.TagRelationCloud())
+        </div>           
+        </div>
+   
+</body>

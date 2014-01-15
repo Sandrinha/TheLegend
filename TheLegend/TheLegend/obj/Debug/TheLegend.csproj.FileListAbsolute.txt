@@ -451,7 +451,6 @@ C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.
 C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
 C:\Users\Sandrinha\Desktop\Arquivo Lapr\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.tagsusers.resources
-C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csproj.GenerateResource.Cache
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.dll
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.pdb
@@ -837,3 +836,4 @@ C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Mig
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.Mission_Users.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionTargetUser.resources
 C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.Migrations.MissionUsersUpdate.resources
+C:\Users\Sandrinha\Desktop\TheLegend\TheLegend\TheLegend\obj\Debug\TheLegend.csprojResolveAssemblyReference.cache

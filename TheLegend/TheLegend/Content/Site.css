@@ -1,11 +1,27 @@
 ﻿html {
+  
     background-color: #e2e2e2;
     margin: 0;
     padding: 0;
 }
 
+#add_image {
+    background-image:url('../Images/images.jpg');
+}
+
+full-width-header {
+position: relative; /* necassary to absolute-position the child-element #home-link relative to the header */
+background: url('/images.jpg');
+width: 800px;
+height: 172px;
+}
+
+
+
 body {
-    background-color: #fff;
+    /*background-image:url('../Images/images.jpg');*/
+    background-color:#cccccc;
+    
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
@@ -28,7 +44,7 @@ a {
     }
 
     a:hover {
-        background-color: #c7d1d6;
+       
     }
 
 header, footer, hgroup,
@@ -37,7 +53,7 @@ nav, section {
 }
 
 mark {
-    background-color: #a6dbed;
+   
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -99,19 +115,20 @@ h5, h6 {
 }
 
 #body {
-    background-color: #efeeef;
+    /*background:url("../Images/thelegend.jpg") no-repeat;*/
+    background-size:100%;
     clear: both;
     padding-bottom: 35px;
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
+       /* background: url("../Images/accent.png") ;*/
         padding-left: 10px;
         padding-top: 30px;
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+      /*  background: url("../Images/heroAccent.png") no-repeat;*/
     }
 
 header .content-wrapper {
@@ -120,9 +137,9 @@ header .content-wrapper {
 
 footer {
     clear: both;
-    background-color: #e2e2e2;
+   
     font-size: .8em;
-    height: 100px;
+    height: 0px;
 }
 
 
@@ -153,7 +170,7 @@ footer {
 }
 
     #login a {
-        background-color: #d3dce0;
+        
         margin-left: 10px;
         margin-right: 3px;
         padding: 2px 3px;
@@ -209,16 +226,16 @@ ul#menu {
 ----------------------------------------------------------*/
 /* featured */
 .featured {
-    background-color: #fff;
+    
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+       
+       /* background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);*/
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }
@@ -263,7 +280,7 @@ ol.round {
         padding-left: 45px;
     }
 
-        ol.round li.zero {
+        /*ol.round li.zero {
             background: url("../Images/orderedList0.png") no-repeat;
         }
 
@@ -273,9 +290,9 @@ ol.round {
 
         ol.round li.two {
             background: url("../Images/orderedList2.png") no-repeat;
-        }
+        }*/
 
-        ol.round li.three {
+        /*ol.round li.three {
             background: url("../Images/orderedList3.png") no-repeat;
         }
 
@@ -297,11 +314,11 @@ ol.round {
 
         ol.round li.eight {
             background: url("../Images/orderedList8.png") no-repeat;
-        }
+        }*/
 
-        ol.round li.nine {
+        /*ol.round li.nine {
             background: url("../Images/orderedList9.png") no-repeat;
-        }
+        }*/
 
 /* content */
 article {
@@ -320,7 +337,7 @@ aside {
     }
 
         aside ul li {
-            background: url("../Images/bullet.png") no-repeat 0 50%;
+            /*background: url("../Images/bullet.png") no-repeat 0 50%;*/
             padding: 2px 0 2px 20px;
         }
 
@@ -426,7 +443,7 @@ label.checkbox {
 
 input, textarea {
     border: 1px solid #e2e2e2;
-    background: #fff;
+    /*background: #fff;*/
     color: #333;
     font-size: 1.2em;
     margin: 5px 0 6px 0;
@@ -444,7 +461,7 @@ textarea {
     }
 
     input[type="checkbox"] {
-        background: transparent;
+        /*background: transparent;*/
         border: inherit;
         width: auto;
     }
@@ -452,7 +469,7 @@ textarea {
     input[type="submit"],
     input[type="button"],
     button {
-        background-color: #d3dce0;
+        /*background-color: #d3dce0;*/
         border: 1px solid #787878;
         cursor: pointer;
         font-size: 1.2em;
