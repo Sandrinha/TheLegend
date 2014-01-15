@@ -34,6 +34,6 @@ void listArcos();
 Arco criaArco(int, int, float, float);
 
 void gravaGrafo();
-void leGrafo();
+void leGrafo(int);
 
 #endif

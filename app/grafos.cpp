@@ -3,6 +3,7 @@
 #include <fstream>
 
 #define __GRAFO__FILE__ "exemplo.grafo"
+#define __GRAFO__FILE__ID5__ "thelegendId5.grafo"
 
 No nos[_MAX_NOS_GRAFO];
 Arco arcos[_MAX_ARCOS_GRAFO];
@@ -95,14 +96,26 @@ void gravaGrafo(){
 		myfile << arcos[i].noi << " " << arcos[i].nof << " " << arcos[i].peso << " " << arcos[i].largura << endl;
 	myfile.close();
 }
-void leGrafo(){
+void leGrafo(int id){
 	ifstream myfile;
-
-	myfile.open (__GRAFO__FILE__, ios::in);
-	if (!myfile.is_open()) {
+	if (id == 5)
+	{
+		myfile.open (__GRAFO__FILE__ID5__, ios::in);
+		if (!myfile.is_open()) {
+		cout << "Erro ao abrir " << __GRAFO__FILE__ID5__ << "para ler" <<endl;
+		exit(1);
+		}
+	}
+	else
+	{
+		myfile.open (__GRAFO__FILE__, ios::in);
+		if (!myfile.is_open()) {
 		cout << "Erro ao abrir " << __GRAFO__FILE__ << "para ler" <<endl;
 		exit(1);
+		}
 	}
+	
+	
 	myfile >> numNos;
 	for(int i=0; i<numNos;i++)
 		myfile >> nos[i].x >> nos[i].y >> nos[i].z;

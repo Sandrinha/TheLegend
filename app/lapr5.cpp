@@ -92,6 +92,8 @@ typedef struct Modelo {
 Estado estado;
 Modelo modelo;
 
+GLfloat K_ESFERA =1.6;
+
 void initEstado(){
 	estado.camera.dir_lat=M_PI/4;
 	estado.camera.dir_long=-M_PI/4;
@@ -147,7 +149,7 @@ void myInit()
 	gluQuadricDrawStyle(modelo.quad, GLU_FILL);
 	gluQuadricNormals(modelo.quad, GLU_OUTSIDE);
 
-	leGrafo();
+	leGrafo(5);
 }
 
 void imprime_ajuda(void)
@@ -470,6 +472,51 @@ void desenhaNo(int no){
 		}
 }
 
+void renderCylinder(float x1, float y1, float z1, float x2, float y2, float z2, float radius, int subdivisions, GLUquadricObj *quadric)
+{
+	float vx = x2 - x1;
+	float vy = y2 - y1;
+	float vz = z2 - z1;
+
+	//handle the degenerate case of z1 == z2 with an approximation
+	if (vz == 0)
+		vz = .0001;
+
+	float v = sqrt(vx*vx + vy*vy + vz*vz);
+	float ax = 57.2957795*acos(vz / v);
+	if (vz < 0.0)
+		ax = -ax;
+	float rx = -vy*vz;
+	float ry = vx*vz;
+	glPushMatrix();
+
+	// material
+	GLfloat cor[] = { 0.2, 0.3, 0.23, 1.0 };
+	GLfloat qaWhite[] = { 1.0, 1.0, 1.0, 1.0 };
+
+	glMaterialfv(GL_FRONT, GL_AMBIENT, cor);
+	glMaterialfv(GL_FRONT, GL_DIFFUSE, cor);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
+	glMaterialf(GL_FRONT, GL_SHININESS, 60.0);
+
+	//draw the cylinder body
+	//glColor3f(0.0,0.5,0.2);
+	glTranslatef(x1, y1, z1);
+	glRotatef(ax, rx, ry, 0.0);
+	gluQuadricOrientation(quadric, GLU_OUTSIDE);
+	gluCylinder(quadric, radius, radius, v, subdivisions, 1);
+
+	//draw the first cap
+	gluQuadricOrientation(quadric, GLU_INSIDE);
+	gluDisk(quadric, 0.0, radius, subdivisions, 1);
+	glTranslatef(0, 0, v);
+
+	//draw the second cap
+	gluQuadricOrientation(quadric, GLU_OUTSIDE);
+	gluDisk(quadric, 0.0, radius, subdivisions, 1);
+	glPopMatrix();
+}
+
 
 void desenhaArco(Arco arco){
 	No *noi,*nof;
@@ -483,10 +530,10 @@ void desenhaArco(Arco arco){
 			nof=&nos[arco.noi];
 			noi=&nos[arco.nof];
 		}
-
-		desenhaChao(noi->x-0.5*arco.largura,noi->y+0.5*noi->largura,noi->z,nof->x+0.5*arco.largura,nof->y-0.5*nof->largura,nof->z, NORTE_SUL);
-		desenhaParede(noi->x-0.5*arco.largura,noi->y+0.5*noi->largura,noi->z,nof->x-0.5*arco.largura,nof->y-0.5*nof->largura,nof->z);
-		desenhaParede(nof->x+0.5*arco.largura,nof->y-0.5*nof->largura,nof->z,noi->x+0.5*arco.largura,noi->y+0.5*noi->largura,noi->z);
+		renderCylinder(noi->x, noi->y, noi->z, nof->x, nof->y, nof->z, arco.largura/2, 20,modelo.quad);
+		//desenhaChao(noi->x-0.5*arco.largura,noi->y+0.5*noi->largura,noi->z,nof->x+0.5*arco.largura,nof->y-0.5*nof->largura,nof->z, NORTE_SUL);
+		//desenhaParede(noi->x-0.5*arco.largura,noi->y+0.5*noi->largura,noi->z,nof->x-0.5*arco.largura,nof->y-0.5*nof->largura,nof->z);
+		//desenhaParede(nof->x+0.5*arco.largura,nof->y-0.5*nof->largura,nof->z,noi->x+0.5*arco.largura,noi->y+0.5*noi->largura,noi->z);
 	}else{
 		if(nos[arco.noi].y==nos[arco.nof].y){
 			//arco horizontal
@@ -497,15 +544,21 @@ void desenhaArco(Arco arco){
 				nof=&nos[arco.noi];
 				noi=&nos[arco.nof];
 			}
-			desenhaChao(noi->x+0.5*noi->largura,noi->y-0.5*arco.largura,noi->z,nof->x-0.5*nof->largura,nof->y+0.5*arco.largura,nof->z, ESTE_OESTE);
-			desenhaParede(noi->x+0.5*noi->largura,noi->y+0.5*arco.largura,noi->z,nof->x-0.5*nof->largura,nof->y+0.5*arco.largura,nof->z);
-			desenhaParede(nof->x-0.5*nof->largura,nof->y-0.5*arco.largura,nof->z,noi->x+0.5*noi->largura,noi->y-0.5*arco.largura,noi->z);
+			renderCylinder(noi->x, noi->y, noi->z, nof->x, nof->y, nof->z, arco.largura/2, 20,modelo.quad);
+			//desenhaChao(noi->x+0.5*noi->largura,noi->y-0.5*arco.largura,noi->z,nof->x-0.5*nof->largura,nof->y+0.5*arco.largura,nof->z, ESTE_OESTE);
+			//desenhaParede(noi->x+0.5*noi->largura,noi->y+0.5*arco.largura,noi->z,nof->x-0.5*nof->largura,nof->y+0.5*arco.largura,nof->z);
+			//desenhaParede(nof->x-0.5*nof->largura,nof->y-0.5*arco.largura,nof->z,noi->x+0.5*noi->largura,noi->y-0.5*arco.largura,noi->z);
 		}
 		else{
-			cout << "arco diagonal... não será desenhado";
+			noi=&nos[arco.noi];
+			nof=&nos[arco.nof];
+			renderCylinder(noi->x, noi->y, noi->z, nof->x, nof->y, nof->z, arco.largura/2, 20,modelo.quad);
+			//cout << "arco diagonal... não será desenhado";
 		}
 	}
 }
+
+
 
 void desenhaLabirinto(){
 	glPushMatrix();
@@ -514,11 +567,14 @@ void desenhaLabirinto(){
 		material(red_plastic);
 		for(int i=0; i<numNos; i++){
 			glPushMatrix();
-				material(preto);
+				//material(preto);
+				material(slate);
 				glTranslatef(nos[i].x,nos[i].y,nos[i].z+0.25);
-				glutSolidCube(0.5);
+				//glutSolidCube(0.5);
+				float raio = K_ESFERA * nos[i].largura / 2.0;
+				glutSolidSphere(raio, 20.0, 20.0);
 			glPopMatrix();
-			desenhaNo(i);
+			//desenhaNo(i);
 		}
 		material(emerald);
 		for(int i=0; i<numArcos; i++)
@@ -624,7 +680,7 @@ void display(void)
 	setCamera();
 
 	material(slate);
-	desenhaSolo();
+	//desenhaSolo();
 
 	
 	desenhaEixos();
@@ -718,7 +774,7 @@ void Special(int key, int x, int y){
 				gravaGrafo();
 			break;
 		case GLUT_KEY_F2 :
-				leGrafo();
+				leGrafo(2);
 				glutPostRedisplay();
 			break;	
 
@@ -747,7 +803,15 @@ void Special(int key, int x, int y){
 		case GLUT_KEY_DOWN:
 				estado.camera.dist+=1;
 				glutPostRedisplay();
-			break;	}
+			break;	
+		case GLUT_KEY_LEFT:
+			estado.camera.center[0]-=1;
+				glutPostRedisplay();
+			break; 
+		case GLUT_KEY_RIGHT:
+			estado.camera.center[0]+=1;
+				glutPostRedisplay();
+			break;  }
 }
 
 
